@@ -1,2 +1,7 @@
 @import url(./vendor/normalize.css);
 @import url(./vendor/fonts/inter.css);
+
+@import url(blocks/poems-container/poems-container.css);
+@import url(blocks/poem/poem.css);
+@import url(blocks/poem/__paragraph/poem__paragraph.css);
+@import url(blocks/poem/__accent/poem__accent.css);
