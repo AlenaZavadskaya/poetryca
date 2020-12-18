@@ -5,3 +5,22 @@
 @import url(blocks/poem/poem.css);
 @import url(blocks/poem/__paragraph/poem__paragraph.css);
 @import url(blocks/poem/__accent/poem__accent.css);
+
+@import url(blocks/link-container/link-container.css);
+@import url(blocks/sing-in-link/sing-in-link.css);
+
+@import url(blocks/popup/popup.css);
+@import url(blocks/popup/_active/popup_active.css);
+@import url(blocks/popup/__container/popup__container.css);
+@import url(blocks/popup/__image/popup__image.css);
+@import url(blocks/popup/__title/popup__title.css);
+@import url(blocks/popup/__form/popup__form.css);
+@import url(blocks/popup/__form/_current/popup__form_current.css);
+@import url(blocks/popup/__input/popup__input.css);
+@import url(blocks/popup/__button/popup__button.css);
+@import url(blocks/popup/__button/_current/popup__button_curent.css);
+
+@import url(blocks/slide/slide.css);
+
+
+

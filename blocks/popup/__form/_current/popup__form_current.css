@@ -1,0 +1,5 @@
+.popup__form_current {
+    visibility: visible;
+    height: auto;
+    transition: visible, 0.6s;
+}
