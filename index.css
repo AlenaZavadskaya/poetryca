@@ -20,6 +20,7 @@
 @import url(blocks/popup/__button/popup__button.css);
 @import url(blocks/popup/__button/_current/popup__button_curent.css);
 
+@import url(blocks/slide/_direction/slide_direction_left.css);
 @import url(blocks/slide/slide.css);
 
 

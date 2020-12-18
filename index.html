@@ -13,7 +13,7 @@
 	<div class="link-container">
 		<a href="#" class="sing-in-link">Войти</a>
 	</div>
-	<div class="popup">
+	<div class="popup popup_type_singin">
 		<div class="popup__container">
 			<img src="images/popup-image.png" alt="#" class="popup__image">
 			<h2 class="popup__title">Вход</h2>
@@ -23,6 +23,20 @@
 				<button type="submit" class="popup__button popup__button_curent popup__submit">Вход</button>
 				<button type="button" class="popup__button">Регистрация</button>
 			</form>
+			<form name="registration-form" class="popup__form popup__form_type_singin">
+				<input type="email" class="popup__input popup__input_type_email" placeholder="Email" required>
+				<input type="password" class="popup__input popup__input_type_password" placeholder="Пароль" required>
+				<input type="password" class="popup__input popup__input_type_password-repeat" placeholder="Повторите пароль" required>
+				<button type="submit" class="popup__button popup__button_curent popup__submit">Регистрация</button>
+				<button type="button" class="popup__button">Вход</button>
+				
+			</form>
+		</div>
+	</div>
+	<div class="popup popup popup_type_registration">
+		<div class="popup__container">
+			<img src="images/popup-image.png" alt="#" class="popup__image">
+			<h2 class="popup__title">Регистрация</h2>
 			<form name="registration-form" class="popup__form popup__form_type_singin">
 				<input type="email" class="popup__input popup__input_type_email" placeholder="Email" required>
 				<input type="password" class="popup__input popup__input_type_password" placeholder="Пароль" required>

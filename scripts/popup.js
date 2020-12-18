@@ -1,12 +1,10 @@
 const singInLink = document.querySelector('.sing-in-link');
-const popupNode = document.querySelector('.popup');
-const popupContainer = popupNode.querySelector('.popup__container');
-let currentForm = popupNode.querySelector('.popup__form_current');
-let currentFormoggleFormBotton = currentForm.querySelector('.popup__button:not(.popup__button_curent)');
-let hiddenForm = popupNode.querySelector('.popup__form:not(.popup__form_current)');
-let hiddenFormtoggleFormBotton = hiddenForm.querySelector('.popup__button:not(.popup__button_curent)');
+const popupSingInNode = document.querySelector('.popup_type_singin');
+const popupContainer = popupSingInNode.querySelector('.popup__container');
+const popupRegInNode = document.querySelector('.popup_type_registration');
+const popupRegContainer = popupRegInNode.querySelector('.popup__container');
 
-console.log(hiddenFormtoggleFormBotton);
+const regButton = popupSingInNode.querySelector('.popup__button:not(.popup__button_curent)')
 
 function popupOpen (evt, popupElement) {
     evt.preventDefault();
@@ -16,32 +14,34 @@ function popupOpen (evt, popupElement) {
 
 function popupContainerSlide(popupContainer) {
     popupContainer.classList.add('slide');
+    popupContainer.classList.add('slide_direction_left');
+    setTimeout(() => {
+        popupContainer.classList.remove('slide');
+    }, 1000);
 }
 
 function popupClose(evt, popupElement) {
     evt.preventDefault();
-    popupElement.classList.remove('popup_active');
-    popupContainer.classList.remove('slide');
-}
-
-function togglePopup(currentForm, hiddenForm) {
-    currentForm.classList.remove('popup__form_current');
-    hiddenForm.classList.add('popup__form_current');
-
+    
+    popupContainer.classList.add('slide');
+    setTimeout(() => {
+        popupContainer.classList.remove('slide');
+        popupContainer.classList.remove('slide_direction_left');
+        popupElement.classList.remove('popup_active');
+    }, 500);
+    
 }
 
 singInLink.addEventListener('click', (evt) => {    
-    popupOpen(evt, popupNode)
+    popupOpen(evt, popupSingInNode)
 })
 
-popupNode.addEventListener('click', (evt) => {
+popupSingInNode.addEventListener('click', (evt) => {
     if(!evt.target.closest('.popup__container')){
-        popupClose(evt, popupNode);
+        popupClose(evt, popupSingInNode);
     }
 }) 
-
-currentFormoggleFormBotton.addEventListener('click', (evt) => {
-    evt.preventDefault();
-    togglePopup(currentForm, hiddenForm)
-})
-
+/*
+regButton.addEventListener('click', (evt) => {
+    popupClose();
+})*/
