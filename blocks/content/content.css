@@ -1,5 +1,7 @@
+/* @import url(./__subtitle/subtitle.css); */
+
 .content {
-    display: flex;
-    flex-direction: row;
-    margin: 94px 23% 0 19%;
+  display: flex;
+  max-width: 1075px;
+  margin: 87px auto 36px;
 }

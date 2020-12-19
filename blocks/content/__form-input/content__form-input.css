@@ -1,0 +1,8 @@
+.content__form-input {
+  background-color: inherit;
+  border: solid #fff7bb;
+  border-radius: 50px;
+  margin-bottom: 25px;
+  min-height: 57px;
+  outline: 0;
+}

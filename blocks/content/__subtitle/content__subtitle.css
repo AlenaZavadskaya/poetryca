@@ -1,0 +1,11 @@
+.content__subtitle {
+  color: #fcf7b7;
+  font-size: 96px;
+  text-align: end;
+  justify-self: start;
+  margin: 0 52px 70px 190px;
+  font-weight: normal;
+  font-family: Cormorant SC;
+  font-weight: 500;
+  line-height: 116px;
+}

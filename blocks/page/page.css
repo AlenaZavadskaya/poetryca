@@ -1,7 +1,14 @@
 .page {
-    background-image: url("../../images/Ellipse9.svg"), linear-gradient(to left, black, #2E2E30);
-    background-repeat: no-repeat;
-    background-position: top;
-    margin: 1.5% 7.2%;
-    
+  background-image: url("../../images/Ellipse9.svg"),
+    linear-gradient(to left, black, #2e2e30);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: contain;
+  display: flex;
+  flex-direction: column;
+  cursor: url("../../images/bi_cursor-fill.svg"), auto;
+}
+
+.page-margin {
+  margin: 0 138px;
 }

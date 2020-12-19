@@ -1,6 +1,9 @@
 .content__title {
-    margin: 0;
-    color: #FCF7B7;
-    font-size: 144px;
-    font-weight: normal;
+  margin: 0;
+  color: #fcf7b7;
+  font-family: "Cormorant SC", serif;
+  font-weight: 500;
+  font-size: 144px;
+  /* line-height: 174px; */
+  font-weight: normal;
 }

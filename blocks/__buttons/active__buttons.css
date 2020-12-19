@@ -1,0 +1,12 @@
+/* @import url(./__button/active__button.css); */
+
+.active__buttons {
+	display: flex;
+	justify-content: space-between;
+	max-width: 815px;
+	min-height: 61px;
+	list-style: none;
+	padding: 0;
+	margin: 0 auto 150px;
+	opacity: .4;
+}

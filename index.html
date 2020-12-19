@@ -10,19 +10,21 @@
 </head>
 
 <body class="page">
-	<header class="header">
-		<h1 class="header__title">
+	<header class="header page-margin">
+		<p class="header__title">
 			POETRYCA
-		</h1>
-		<div class="header__buttons-container">
-			<button class="header__button">Коллекции</button>
-			<button class="header__button">Стать автором</button>
-			<button class="header__button">Учить стихи</button>
-			<button class="header__button">Шаблоны</button>
-		</div>
+		</p>
+		<nav>
+			<ul class="header__links">
+				<li class="header__link">Коллекции</li>
+				<li class="header__link">Стать автором</li>
+				<li class="header__link">Учить стихи</li>
+				<li class="header__link">Шаблоны</li>
+			</ul>
+		</nav>
 		<div class="header__profile">
-			<img class="header__logo" src="" alt="">
-			<button class="header__button">Войти</button>
+			<img class="header__profile-icon" src="./images/profile-icon.jpg" alt="">
+			<p class="header__profile-enter">Войти</p>
 		</div>
 	</header>
 
@@ -30,86 +32,94 @@
 		<img class="content__image" src="./images/woman.png" alt="">
 		<div class="content__container">
 			<h1 class="content__title">Перевод</h1>
-			<h1 class="content__title_bottom">на стихи</h1>
-			<div class="content__input-container">
-				<input class="content__input" type="text" placeholder="		Введите запрос">
-				<button class="content__generate-but" type="submit">Сгенерировать</button>
-			</div>
+			<h1 class="content__subtitle">на стихи</h1>
+			<form class="content__form">
+				<input class="content__form-input" type="text" placeholder="		Введите фразу">
+				<button class="content__form-button" type="submit">Сгенерировать</button>
+			</form>
 		</div>
 	</section>
 
 	<section class="poem-box">
-		<div class="poem-box__main-container">
-			<div class="poem-box__poem">
-				<div class="poem-box__text-container">
+			<article class="poem-box__poem page-margin">
 					<p class="poem-box__text">
-						Я встретил вас — и все былое
+						Я встретил вас — и всё былое<br />
+						В отжившем сердце ожило;<br />
+						Я вспомнил время золотое<br />
+					  И сердцу стало так тепло...
 					</p>
-					<p class="poem-box__text">
-						В отжившем сердце ожило;
-					</p>
-				</div>
 				<div class="poem-box__but-box">
-					<button class="poem-box__refresh-but"></button>
-					<button class="poem-box__like-but"></button>
+					<div class="poem-box__container">
+						<div class="poem-box__like-but"></div>
+						<div class="poem-box__refresh-but"></div>
+					</div>
+					<p class="poem-box__author">Федор Тютчев, К. Б.</p>
 				</div>
-			</div>
-			<div class="poem-box__poem">
-				<div>
-					<p class="poem-box__text">
-						И над собственною ролью плачу я и хохочу.
-					</p>
-					<p class="poem-box__text">
-						То, что вижу, с тем, что видел, я в одно сложить хочу.
-					</p>
-				</div>
-				<div class="poem-box__but-box">
-					<button class="poem-box__refresh-but"></button>
-					<button class="poem-box__like-but"></button>
-				</div>
-			</div>
-			<div class="poem-box__poem">
-				<div>
-					<p class="poem-box__text">
-						Хоть ножищи по ее лицу прошли...
-					</p>
-					<p class="poem-box__text">
-						Много раз за ту картину заплатили,
-					</p>
-					<p class="poem-box__text">
-						Но купить ее ни разу не смогли
-					</p>
-				</div>
-				<div class="poem-box__but-box">
-					<button class="poem-box__refresh-but"></button>
-					<button class="poem-box__like-but"></button>
-				</div>
-			</div>
-			<div class="poem-box__poem">
-				<div>
-					<p class="poem-box__text">
-						Хлеб на полях не созрел и пропал;
-					</p>
-					<p class="poem-box__text">
-						Сделался голод, народ умирал
-					</p>
-				</div>
-				<div class="poem-box__but-box">
-					<button class="poem-box__but-box-but"></button>
-					<button class="poem-box__but-box-but"></button>
-				</div>
-			</div>
+				</article>
 
-			<div class="poem-box__but-container">
-				<button class="poem-box__but"></button>
-				<button class="poem-box__but"></button>
-				<button class="poem-box__but"></button>
-				<button class="poem-box__but"></button>
-				<button class="poem-box__but"></button>
-			</div>
+				<article class="poem-box__poem page-margin">
+					<p class="poem-box__text">
+						Я встретил вас — и всё былое<br />
+						В отжившем сердце ожило;<br />
+						Я вспомнил время золотое<br />
+					  И сердцу стало так тепло...
+					</p>
+				<div class="poem-box__but-box">
+					<div class="poem-box__container">
+						<div class="poem-box__like-but"></div>
+						<div class="poem-box__refresh-but"></div>
+					</div>
+					<p class="poem-box__author">Федор Тютчев, К. Б.</p>
+				</div>
+				</article>
+
+				<article class="poem-box__poem page-margin">
+					<p class="poem-box__text">
+						Я встретил вас — и всё былое<br />
+						В отжившем сердце ожило;<br />
+						Я вспомнил время золотое<br />
+					  И сердцу стало так тепло...
+					</p>
+				<div class="poem-box__but-box">
+					<div class="poem-box__container">
+						<div class="poem-box__like-but"></div>
+						<div class="poem-box__refresh-but"></div>
+					</div>
+					<p class="poem-box__author">Федор Тютчев, К. Б.</p>
+				</div>
+				</article>
+
+				<article class="poem-box__poem page-margin">
+					<p class="poem-box__text">
+						Я встретил вас — и всё былое<br />
+						В отжившем сердце ожило;<br />
+						Я вспомнил время золотое<br />
+					  И сердцу стало так тепло...
+					</p>
+				<div class="poem-box__but-box">
+					<div class="poem-box__container">
+						<div class="poem-box__like-but"></div>
+						<div class="poem-box__refresh-but"></div>
+					</div>
+					<p class="poem-box__author">Федор Тютчев, К. Б.</p>
+				</div>
+				</article>
+
+			<ul class="active__buttons">
+				<li class="active__button active__button_copy"></li>
+				<li class="active__button active__button_share"></li>
+				<li class="active__button active__button_refresh"></li>
+				<li class="active__button active__button_send"></li>
+				<li class="active__button active__button_save"></li>
+			</ul>
 		</div>
 	</section>
-
+<footer class="footer">
+	<p class="footer__logo">
+		POETRYCA
+	</p>
+	<p class="footer__copyright">&copy; All rights reserved. Poetryca 2025</p>
+</footer>
 </body>
 <script src="./index.js"></script>
 
