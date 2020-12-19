@@ -1,0 +1,12 @@
+.header__button {
+    font-size: 16px;
+    background-color: inherit;
+    color: #FFFF;
+    border: 0;
+    outline: none;
+}
+
+.header__button:hover {
+    color: rgb(209, 207, 207);
+    cursor: pointer;
+}
