@@ -1,5 +1,6 @@
 @import url(blocks/poems-container/poems-container.css);
 @import url(blocks/poem/poem.css);
+@import url(blocks/poem/_hidden/poem__paragraph_hidden.css);
 @import url(blocks/poem/__paragraph/poem__paragraph.css);
 @import url(blocks/poem/__accent/poem__accent.css);
 @import url(./vendor/normalize.css);
