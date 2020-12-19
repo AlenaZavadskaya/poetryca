@@ -1,0 +1,17 @@
+.content__generate-but {
+    background-image: linear-gradient(to left, black, #2E2E30);
+    border: 0;
+    border-radius: 50px;
+    outline: 0;
+    color: #FFF7BB;
+    font-size: 16px;
+    min-height: 40px;
+    box-shadow: -1px -3px 10px  rgba(247, 243, 243, 0.308) ;
+}
+
+.content__generate-but:hover {
+    background-image: unset;
+    background-color: #FFF7BB;
+    color: black;
+    cursor: pointer;
+}
