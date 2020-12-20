@@ -1,4 +1,11 @@
 .poem-box__poem {
-    display: flex;
-    margin: auto;
+  display: flex;
+  margin: 0 auto 60px;
+  text-align: center;
+  flex-direction: column;
+  height: 440px;
+  background-image: linear-gradient(to left, black, #2e2e30);
+  border-radius: 40px;
+  box-shadow: -1px -3px 10px rgba(247, 243, 243, 0.308);
+  opacity: 0.7;
 }

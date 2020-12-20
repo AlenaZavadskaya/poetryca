@@ -1,3 +1,7 @@
 .poem-box__but-box {
-    
+  display: flex;
+  justify-content: space-between;
+  width: 790px;
+  height: 44px;
+  margin: 0 auto 68px;
 }

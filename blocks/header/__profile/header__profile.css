@@ -1,0 +1,5 @@
+.header__profile {
+	width: 106px;
+	display: flex;
+	justify-content: space-between;
+}

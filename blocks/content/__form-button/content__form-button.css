@@ -1,0 +1,24 @@
+.content__form-button {
+  background-image: linear-gradient(to left, black, #2e2e30);
+  border: 0;
+  border-radius: 50px;
+  color: #fff7bb;
+  font-size: 16px;
+  min-height: 57px;
+  box-shadow: -1px -3px 10px rgba(247, 243, 243, 0.308);
+  font-family: SF Pro Text;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  text-transform: uppercase;
+	letter-spacing: 0.05em;
+	transition: 0.1s linear 0.1s;
+}
+
+.content__form-button:hover {
+  background-image: unset;
+  background-color: #fff7bb;
+  color: black;
+  cursor: inherit;
+}

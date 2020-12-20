@@ -1,5 +1,12 @@
+@import url(./__profile/header__profile.css);
+@import url(./__profile-icon/header__profile-icon.css);
+@import url(./__profile-enter/header__profile-enter.css);
+
 .header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+	align-items: center;
+	margin-top: 8px;
+  /* max-width: 1644px; */
 }

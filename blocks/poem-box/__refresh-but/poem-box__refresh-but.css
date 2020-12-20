@@ -1,0 +1,16 @@
+.poem-box__refresh-but {
+	background: url(../../../images/Vector1.svg);
+	width: 51px;
+	height: 51px;
+	padding: 0;
+	background-color: transparent;
+	background-size: contain;
+	background-repeat: no-repeat;
+	transition: 0.1s linear 0.1s;
+}
+
+.poem-box__refresh-but:hover {
+	background: url(../../../images/Refresh-active.svg);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
