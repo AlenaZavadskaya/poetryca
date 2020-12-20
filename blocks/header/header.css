@@ -1,6 +1,9 @@
 @import url(./__profile/header__profile.css);
 @import url(./__profile-icon/header__profile-icon.css);
 @import url(./__profile-enter/header__profile-enter.css);
+@import url(./__logo/header__logo.css);
+@import url(./__links/header__links.css);
+@import url(./__link/header__link.css);
 
 .header {
   display: flex;
