@@ -2,36 +2,7 @@
 @import url(./vendor/fonts/inter.css);
 @import url(./blocks/page/page.css);
 @import url(./blocks/header/header.css);
-@import url(./blocks/header/__title/header__title.css);
-@import url(./blocks/header/__links/header__links.css);
-@import url(./blocks/header/__link/header__link.css);
 @import url(./blocks/content/content.css);
-
-@import url(./blocks/content/__title/content__title.css);
-@import url(./blocks/content/__subtitle/content__subtitle.css);
-@import url(./blocks/content/__form-input/content__form-input.css);
-@import url(./blocks/content/__form/content__form.css);
-@import url(./blocks/content/__image/content__image.css);
-@import url(./blocks/content/__form-button/content__form-button.css);
-@import url(./blocks/content/__container/content__container.css);
-@import url(./blocks/poem-box/__but-box/poem-box__but-box.css);
-@import url(./blocks/poem-box/__but-container/poem-box__but-container.css);
-@import url(./blocks/poem-box/__but/poem-box__but.css);
-@import url(./blocks/poem-box/__poem/poem-box__poem.css);
-@import url(./blocks/poem-box/__text/poem-box__text.css);
 @import url(./blocks/poem-box/poem-box.css);
-@import url(./blocks/poem-box/__but-box/poem-box__but-box.css);
-@import url(./blocks/poem-box/__container/poem-box__container.css);
-@import url(./blocks/poem-box/__refresh-but/poem-box__refresh-but.css);
-@import url(./blocks/poem-box/__like-but/poem-box__like-but.css);
-@import url(./blocks/poem-box/__author/poem-box__author.css);
 @import url(./blocks/__buttons/active__buttons.css);
-@import url(./blocks/__buttons/__button/active__button.css);
-@import url(./blocks/__buttons/__button/_copy/active__button_copy.css);
-@import url(./blocks/__buttons/__button/_share/active__button_share.css);
-@import url(./blocks/__buttons/__button/_refresh/active__button_refresh.css);
-@import url(./blocks/__buttons/__button/_send/active__button_send.css);
-@import url(./blocks/__buttons/__button/_save/active__button_save.css);
-@import url(./blocks/content/__accent/content__accent.css);
-
 @import url(./blocks/footer/footer.css);
