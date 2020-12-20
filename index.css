@@ -32,5 +32,6 @@
 @import url(./blocks/__buttons/__button/_refresh/active__button_refresh.css);
 @import url(./blocks/__buttons/__button/_send/active__button_send.css);
 @import url(./blocks/__buttons/__button/_save/active__button_save.css);
+@import url(./blocks/content/__accent/content__accent.css);
 
 @import url(./blocks/footer/footer.css);
