@@ -13,12 +13,17 @@
   line-height: 19px;
   text-transform: uppercase;
 	letter-spacing: 0.05em;
-	transition: 0.1s linear 0.1s;
+	transition: 0.1s linear 0.05s;
 }
 
 .content__form-button:hover {
-  background-image: unset;
+	opacity: .7;
+	cursor: inherit;
+}
+
+.content__form-button:focus {
+  /* background-image: unset;
   background-color: #fff7bb;
   color: black;
-  cursor: inherit;
+  cursor: inherit; */
 }

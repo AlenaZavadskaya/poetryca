@@ -7,12 +7,11 @@
   background-image: linear-gradient(to left, black, #2e2e30);
   border-radius: 40px;
   box-shadow: -1px -3px 10px rgba(247, 243, 243, 0.308);
-	opacity: 0.7;
-	transition: 0.1s linear 0.1s;
+	transition: 0.1s linear 0.05s;
 }
 
 .poem-box__poem:hover {
 	background: linear-gradient(90.03deg, #2E2E30 5.43%, #161618 99.86%);
 	box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.25);
-	opacity: .9;
+	opacity: .7;
 };
