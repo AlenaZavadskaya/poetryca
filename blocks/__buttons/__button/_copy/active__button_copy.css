@@ -1,3 +1,9 @@
 .active__button_copy {
 	background-image: url(../../../../images/copy-white.svg);
+	background-position: left;
+	width: 65px;
+}
+
+.active__button_copy:hover {
+	background-image: url('../../../../images/copy-active\ \(2\).svg');
 }
