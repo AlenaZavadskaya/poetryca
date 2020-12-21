@@ -34,11 +34,12 @@
       <div class="content__container">
         <h1 class="content__title">Перевод</h1>
         <h1 class="content__subtitle">на стихи</h1>
-        <form class="content__form">
-          <input
+        <form name="generate" class="content__form">
+		  <input
+			name="words"
             class="content__form-input"
             type="text"
-            placeholder="	Я хочу купить хлеб"
+            value="бородатый богатырь готовый чихирь неправда ль обмана возникнет"
           />
           <button class="content__form-button" type="submit">
             Сгенерировать
@@ -48,83 +49,33 @@
     </section>
 
     <section class="poem-box">
-      <article class="poem-box__poem page-margin">
-        <p class="poem-box__text">
-          <span class="content__accent">Я</span> встретил вас — и всё былое<br />
-          В отжившем сердце ожило;<br />
-          Я вспомнил время золотое<br />
-          И сердцу стало так тепло...
-        </p>
-        <div class="poem-box__but-box">
-          <div class="poem-box__container">
-            <div class="poem-box__like-but"></div>
-            <div class="poem-box__refresh-but"></div>
-          </div>
-          <p class="poem-box__author">Федор Тютчев, К. Б.</p>
-        </div>
-      </article>
+     
 
-      <article class="poem-box__poem page-margin">
-        <p class="poem-box__text">
-          И над собственною ролью плачу я и хохочу.<br />
-          То, что вижу, с тем, что видел, я в одно сложить
-          <span class="content__accent">хочу</span>.<br />
-          То, что видел, с тем, что знаю, помоги связать в одно,<br />
-          жизнь моя, кинематограф, черно-белое кино!
-        </p>
-        <div class="poem-box__but-box">
-          <div class="poem-box__container">
-            <div class="poem-box__like-but"></div>
-            <div class="poem-box__refresh-but"></div>
-          </div>
-          <p class="poem-box__author">Юрий Левитанский, Кинематограф</p>
-        </div>
-      </article>
-
-      <article class="poem-box__poem page-margin">
-        <p class="poem-box__text">
-          Хоть ножищи по ее лицу прошли...<br />
-          Много раз за ту картину заплатили,<br />
-          Но <span class="content__accent">купить</span> ее ни разу не смогли
-        </p>
-        <div class="poem-box__but-box">
-          <div class="poem-box__container">
-            <div class="poem-box__like-but"></div>
-            <div class="poem-box__refresh-but"></div>
-          </div>
-          <p class="poem-box__author">Новелла Матвеева, Художники</p>
-        </div>
-      </article>
-
-      <article class="poem-box__poem page-margin">
-        <p class="poem-box__text">
-          <span class="content__accent">Хлеб</span> на полях не созрел и
-          пропал;<br />
-          Сделался голод, народ умирал
-        </p>
-        <div class="poem-box__but-box">
-          <div class="poem-box__container">
-            <div class="poem-box__like-but"></div>
-            <div class="poem-box__refresh-but"></div>
-          </div>
-          <p class="poem-box__author">
-            Василий Жуковский, Суд божий над епископом
-          </p>
-        </div>
-      </article>
-
-      <ul class="active__buttons">
+      <!--ul class="active__buttons">
         <li class="active__button active__button_copy"></li>
         <li class="active__button active__button_share"></li>
         <li class="active__button active__button_refresh"></li>
         <li class="active__button active__button_send"></li>
         <li class="active__button active__button_save"></li>
-      </ul>
+      </ul-->
     </section>
     <footer class="footer">
       <p class="footer__logo">POETRYCA</p>
       <p class="footer__copyright">&copy; All rights reserved. Poetryca 2025</p>
-    </footer>
-    <!-- <script src="./index.js"></script> -->
+	</footer>
+	<template id="poem-template">
+		<article class="poem-box__poem page-margin">
+        	<div class="poem-box__text">
+        	</div>
+        	<div class="poem-box__but-box">
+          	<div class="poem-box__container">
+            	<div class="poem-box__like-but"></div>
+            	<div class="poem-box__refresh-but"></div>
+          	</div>
+          	<p class="poem-box__author">Федор Тютчев, К. Б.</p>
+        	</div>
+	  	</article>
+	</template>
+    <script src="./index.js"></script>
   </body>
 </html>

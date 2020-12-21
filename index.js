@@ -1,6 +1,7 @@
-const formNode = document.forms.poemForm;
+const formNode = document.forms.generate;
 const inputNode = formNode.elements.words;
-const poemsContainer = document.querySelector('.poems-container');
+const poemsContainer = document.querySelector('.poem-box');
+const poemTemplate = document.querySelector('#poem-template').content;
 //Тут храним последние слова из ненайденной фразы
 let findingArray = [];
 
@@ -154,7 +155,7 @@ function addPoemParts(stringElementArray, annots) {
     const beforeAfterArray = stringElementArray[0].split(findingArray[0]);
      //Сохдаем span для выделения входжения
     const poemSpanAccentNode = document.createElement('span');
-    poemSpanAccentNode.classList.add('poem__accent');
+    poemSpanAccentNode.classList.add('content__accent');
     poemSpanAccentNode.textContent = findingArray[0];
     console.log('HERE!!!');
     let [afterText, annot=''] = addAnnots(beforeAfterArray[1], annots);
@@ -205,18 +206,19 @@ function addAnnots(text, annots) {
 };
 
 function renderPoem(poemElements, container) {
-  const poemElement = document.createElement('li');
-  poemElement.classList.add('poem');
-  container.append(poemElement);
+  let poemElement = poemTemplate.cloneNode(true);
+  let poemTextBoxNode = poemElement.querySelector('.poem-box__text');
   poemElements.forEach((node) => {
-    poemElement.append(node);
-  }) 
+    poemTextBoxNode.append(node);
+  })
+
+  container.append(poemElement);
 }
 
 
 function removePoems(container) {
   
-  const poemsNodeList = [...container.querySelectorAll('.poem')];
+  const poemsNodeList = [...container.querySelectorAll('.poem-box__poem')];
 
   poemsNodeList.forEach((poem) => {
     poem.remove();
