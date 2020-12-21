@@ -35,11 +35,11 @@
         <h1 class="content__title">Перевод</h1>
         <h1 class="content__subtitle">на стихи</h1>
         <form name="generate" class="content__form">
-		  <input
-			name="words"
+          <input
+            name="words"
             class="content__form-input"
             type="text"
-            value="бородатый богатырь готовый чихирь неправда ль обмана возникнет"
+            value="борода бородатого бородача"
           />
           <button class="content__form-button" type="submit">
             Сгенерировать
@@ -48,34 +48,33 @@
       </div>
     </section>
 
-    <section class="poem-box">
-     
-
-      <!--ul class="active__buttons">
+    <section class="poem-box" id="poem-box"></section>
+    <section class="poem-box" id="activeButtons"></section>
+    <footer class="footer">
+      <p class="footer__logo">POETRYCA</p>
+      <p class="footer__copyright">&copy; All rights reserved. Poetryca 2025</p>
+    </footer>
+    <template id="poem-template">
+      <article class="poem-box__poem page-margin">
+        <div class="poem-box__text"></div>
+        <div class="poem-box__but-box">
+          <div class="poem-box__container">
+            <div class="poem-box__like-but"></div>
+            <div class="poem-box__refresh-but"></div>
+          </div>
+          <p class="poem-box__author">Федор Тютчев, К. Б.</p>
+        </div>
+      </article>
+    </template>
+    <template id="buttons">
+      <ul class="active__buttons">
         <li class="active__button active__button_copy"></li>
         <li class="active__button active__button_share"></li>
         <li class="active__button active__button_refresh"></li>
         <li class="active__button active__button_send"></li>
         <li class="active__button active__button_save"></li>
-      </ul-->
-    </section>
-    <footer class="footer">
-      <p class="footer__logo">POETRYCA</p>
-      <p class="footer__copyright">&copy; All rights reserved. Poetryca 2025</p>
-	</footer>
-	<template id="poem-template">
-		<article class="poem-box__poem page-margin">
-        	<div class="poem-box__text">
-        	</div>
-        	<div class="poem-box__but-box">
-          	<div class="poem-box__container">
-            	<div class="poem-box__like-but"></div>
-            	<div class="poem-box__refresh-but"></div>
-          	</div>
-          	<p class="poem-box__author">Федор Тютчев, К. Б.</p>
-        	</div>
-	  	</article>
-	</template>
+      </ul>
+    </template>
     <script src="./index.js"></script>
   </body>
 </html>

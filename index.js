@@ -1,7 +1,9 @@
 const formNode = document.forms.generate;
 const inputNode = formNode.elements.words;
-const poemsContainer = document.querySelector('.poem-box');
+const poemsContainer = document.querySelector('#poem-box');
 const poemTemplate = document.querySelector('#poem-template').content;
+const buttonsContainer = document.querySelector('#activeButtons');
+const activeButtons = document.querySelector('#buttons').content;
 //Тут храним последние слова из ненайденной фразы
 let findingArray = [];
 
@@ -210,8 +212,8 @@ function renderPoem(poemElements, container) {
   let poemTextBoxNode = poemElement.querySelector('.poem-box__text');
   poemElements.forEach((node) => {
     poemTextBoxNode.append(node);
-  })
-
+	})
+	buttonsContainer.append(activeButtons);
   container.append(poemElement);
 }
 
