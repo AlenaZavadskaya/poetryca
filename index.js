@@ -20,7 +20,7 @@ function getPoem(keyPhrase) {
   //Массив хранения элементов одной поэмы
   //Тут хранить массив строк (p) одной поэмы
   
-  fetch(`http://buymebuyme.xyz?q=${keyPhrase[0]}`, {
+  fetch(`https://buymebuyme.xyz?q=${keyPhrase[0]}`, {
     method: "GET",
   })
     .then((res) => {
