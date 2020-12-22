@@ -90,7 +90,7 @@ function getPoem(keyPhrase) {
 
           const noFindMessageNode = document.createElement('p');
           
-          noFindMessageNode.classList.add('poem__paragraph', 'poem__paragraph_error');
+          noFindMessageNode.classList.add('poem-box__paragraph', 'poem__paragraph_error');
           
           noFindMessageNode.textContent = 'Извините, мы не нашли такое слово...';
           let noFindMessageNodeList = []
