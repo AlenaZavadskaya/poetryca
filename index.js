@@ -149,7 +149,7 @@ function addPoemParts(stringElementArray, annots) {
   //Разделяем текст на массив по строчкам
   //И возвращаем массив элементров поэмы
   let poemParagraphNode = document.createElement('p');
-  poemParagraphNode.classList.add('poem__paragraph');
+  poemParagraphNode.classList.add('poem-box__paragraph');
   //Ищем вхождение
   if(stringElementArray[0].includes(findingArray[0])) {
     console.log('нашли');
