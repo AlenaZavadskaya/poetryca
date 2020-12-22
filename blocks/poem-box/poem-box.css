@@ -5,7 +5,7 @@
 @import url(./__refresh-but/poem-box__refresh-but.css);
 @import url(./__poem/poem-box__poem.css);
 @import url(./__text/poem-box__text.css);
-
+@import url(./__paragraph/poem-box__paragraph.css);
 
 .poem-box {
 	width: 1072px;
