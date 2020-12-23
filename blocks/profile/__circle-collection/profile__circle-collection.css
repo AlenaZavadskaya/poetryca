@@ -1,0 +1,11 @@
+.profile__circle-collection {
+  /* background-image: url("../../images/Intersect\ правый.svg"),
+	linear-gradient(to left, black, #2e2e30); */
+  background-image: url("../../../images/Intersect\ правый.svg");
+  width: 244px;
+  height: 487px;
+  /* box-shadow: 0px 2.17141px 35.2854px rgba(255, 255, 255, 0.3); */
+  background-position: center;
+  border-bottom-right-radius: 234px;
+  border-top-right-radius: 240px;
+}
