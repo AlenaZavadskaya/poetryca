@@ -1,4 +1,4 @@
-const singInLink = document.querySelector('.sing-in-link');
+const singInLink = document.querySelector('.header__profile');
 const popupSingInNode = document.querySelector('.popup_type_singin');
 const popupContainer = popupSingInNode.querySelector('.popup__container');
 const popupRegInNode = document.querySelector('.popup_type_registration');
