@@ -38,6 +38,8 @@ function getPoem(keyPhrase) {
         //Добавляем в результат для вывода
         // И ищем остальные слова в найденном тексте
         let poemText = resultPoemObject.fields.text;
+        const poemAuthor = resultPoemObject.fields.author;
+        const poemTitle = resultPoemObject.fields.name;
         let poemTextList = poemText.split('\n');
         //Очищаем текст от аннотаций
         
@@ -47,7 +49,7 @@ function getPoem(keyPhrase) {
         poemElements.pop();
 
         //Показываем стихотворение
-        renderPoem(poemElements, poemsContainer);
+        renderPoem(poemElements, poemsContainer, poemAuthor, poemTitle);
         //Проверяем missingWords.length
         //Если после разметки что-то осталось, то 
         if(findingArray.length !== 0) {
@@ -177,8 +179,12 @@ function addAnnots(text, annots) {
   return [resText, resSpan]
 };
 
-function renderPoem(poemElements, container) {
+function renderPoem(poemElements, container, author = '', title = '') {
   let poemElement = poemTemplate.cloneNode(true);
+  if(author && title) {
+    const poemAutorTiileNode = poemElement.querySelector('.poem-box__author');
+    poemAutorTiileNode.textContent = author + ', ' + title;
+  }
   let poemTextBoxNode = poemElement.querySelector('.poem-box__text');
   poemElements.forEach((node) => {
     poemTextBoxNode.append(node);
@@ -224,5 +230,7 @@ poemsContainer.addEventListener('click', (evt) => {
     poemParagraphList.forEach((elem) => {
       elem.classList.toggle('hidden');
     })
+  } else if(evt.target.classList.contains('poem-box__refresh-but')) {
+    refreshPoemExcerpt(evt.target);
   }
 })
