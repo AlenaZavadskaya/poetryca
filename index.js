@@ -1,3 +1,4 @@
+const pageNode = document.querySelector('.page'); 
 const formNode = document.forms.generate;
 const inputNode = formNode.elements.words;
 const poemsContainer = document.querySelector('#poem-box');
@@ -200,6 +201,9 @@ function returnPoemResult(listOfPoems) {
   return listOfPoems[index];
 }
 
+function removePageFullHeight(pageNode){
+  pageNode.classList.remove('page_fullheight')
+};
 
 formNode.addEventListener('submit', (evt) => {
   evt.preventDefault();
@@ -211,6 +215,7 @@ formNode.addEventListener('submit', (evt) => {
   //Удаляем знаки припинания и прочие символы кроме букв
   //Ищем полное вхождение
   getPoem(findingArray);
+  removePageFullHeight(pageNode);
 });
 
 poemsContainer.addEventListener('click', (evt) => {
