@@ -5,6 +5,7 @@
   background-position: top;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 	cursor: url("../../images/bi_cursor-fill.svg"), auto;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
