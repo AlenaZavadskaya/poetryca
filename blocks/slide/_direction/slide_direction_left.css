@@ -1,0 +1,24 @@
+.slide_direction_left {
+    animation: slide_direction_left 2s ease-in-out;
+    animation-play-state: paused;
+    animation-fill-mode: forwards;
+}
+  
+@keyframes slide_direction_left {
+    0% {
+        tramsform: translate(0%); 
+    }
+    50% {
+        transform: translate(-100%); 
+    }
+    100% {
+        transform: translate(100%); 
+    }
+}
+
+.slide_direction_right {
+    animation: slide_direction_left 0.8s ease-in-out;
+    animation-play-state: running;
+    animation-fill-mode: forwards;
+    animation-direction: reverse;
+}

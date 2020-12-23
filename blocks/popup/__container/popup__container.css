@@ -1,0 +1,14 @@
+.popup__container {
+    position: relative;
+    top:0;
+    left: 100%;
+    background-image: linear-gradient(to right, #2E2E30, #161618);
+    width: 50%;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: initial;
+}

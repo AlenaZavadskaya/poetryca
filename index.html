@@ -1,80 +1,100 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>POETRYCA</title>
-    <link rel="stylesheet" href="./index.css" />
-  </head>
 
-  <body class="page page_fullheight">
-    <header class="header page-margin">
-      <p class="header__logo">POETRYCA</p>
-      <nav>
-        <ul class="header__links">
-          <li class="header__link">Коллекции</li>
-          <li class="header__link">Стать автором</li>
-          <li class="header__link">Учить стихи</li>
-          <li class="header__link">Шаблоны</li>
-        </ul>
-      </nav>
-      <div class="header__profile">
-        <img
-          class="header__profile-icon"
-          src="./images/profile-icon.jpg"
-          alt="иконка профиля"
-        />
-        <p class="header__profile-enter">Войти</p>
-      </div>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>POETRYCA</title>
+  <link rel="stylesheet" href="./index.css" />
+</head>
 
-    <section class="content">
-      <img class="content__image" src="./images/woman.png" alt="" />
-      <div class="content__container">
-        <h1 class="content__title">Перевод</h1>
-        <h1 class="content__subtitle">на стихи</h1>
-        <form name="generate" class="content__form">
-          <input
-            name="words"
-            class="content__form-input"
-            type="text"
-            value="поставить лавочку подмести"
-          />
-          <button class="content__form-button" type="submit">
-            Сгенерировать
-          </button>
+<body class="page page_fullheight">
+  <header class="header page-margin">
+    <p class="header__logo">POETRYCA</p>
+    <nav>
+      <ul class="header__links">
+        <li class="header__link">Коллекции</li>
+        <li class="header__link">Стать автором</li>
+        <li class="header__link">Учить стихи</li>
+        <li class="header__link">Шаблоны</li>
+      </ul>
+    </nav>
+    <div class="header__profile">
+      <img class="header__profile-icon" src="./images/profile-icon.jpg" alt="иконка профиля" />
+      <p class="header__profile-enter">Войти</p>
+    </div>
+  </header>
+
+  <section class="content">
+    <img class="content__image" src="./images/woman.png" alt="" />
+    <div class="content__container">
+      <h1 class="content__title">Перевод</h1>
+      <h1 class="content__subtitle">на стихи</h1>
+      <form name="generate" class="content__form">
+        <input name="words" class="content__form-input" type="text" value="поставить лавочку подмести" />
+        <button class="content__form-button" type="submit">
+          Сгенерировать
+        </button>
+      </form>
+    </div>
+  </section>
+
+
+  <section class="poem-box" id="poem-box"></section>
+  <section class="poem-box" id="activeButtons"></section>
+  <footer class="footer">
+    <p class="footer__logo">POETRYCA</p>
+    <p class="footer__copyright">&copy; All rights reserved. Poetryca 2025</p>
+  </footer>
+  <div class="popup popup_type_singin">
+    <div class="popup__container">
+      <img src="images/popup-image.png" alt="#" class="popup__image">
+      <div class="popup__form-container popup__form-container_current">
+        <h2 class="popup__title">Вход</h2>
+        <form name="singin-form" class="popup__form  popup__form_type_singin">
+          <input type="email" class="popup__input popup__input_type_email" placeholder="Email" required>
+          <input type="password" class="popup__input popup__input_type_password" placeholder="Пароль" required>
+          <button type="submit" class="popup__button popup__button_type_submit">Вход</button>
+          <button type="button" class="popup__button popup__button_type_switch-reg">Регистрация</button>
         </form>
       </div>
-    </section>
-
-    <section class="poem-box" id="poem-box"></section>
-    <section class="poem-box" id="activeButtons"></section>
-    <footer class="footer">
-      <p class="footer__logo">POETRYCA</p>
-      <p class="footer__copyright">&copy; All rights reserved. Poetryca 2025</p>
-    </footer>
-    <template id="poem-template">
-      <article data-phrase ="" class="poem-box__poem page-margin">
-        <div class="poem-box__text"></div>
-        <div class="poem-box__but-box">
-          <div class="poem-box__container">
-            <div class="poem-box__like-but"></div>
-            <div class="poem-box__refresh-but"></div>
-          </div>
-          <p class="poem-box__author"></p>
+      <div class="popup__form-container">
+        <h2 class="popup__title">Регистрация</h2>
+        <form name="registration-form" class="popup__form popup__form_type_registration">
+          <input type="email" class="popup__input popup__input_type_email" placeholder="Email" required>
+          <input type="password" class="popup__input popup__input_type_password" placeholder="Пароль" required>
+          <input type="password" class="popup__input popup__input_type_password-repeat" placeholder="Повторите пароль"
+            required>
+          <button type="submit" class="popup__button popup__button_type_submit">Регистрация</button>
+          <button type="button" class="popup__button popup__button_type_switch-singIn">Вход</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <template id="poem-template">
+    <article data-phrase="" class="poem-box__poem page-margin">
+      <div class="poem-box__text"></div>
+      <div class="poem-box__but-box">
+        <div class="poem-box__container">
+          <div class="poem-box__like-but"></div>
+          <div class="poem-box__refresh-but"></div>
         </div>
-      </article>
-    </template>
-    <template id="buttons">
-      <ul class="active__buttons">
-        <li class="active__button active__button_copy"></li>
-        <li class="active__button active__button_share"></li>
-        <li class="active__button active__button_refresh"></li>
-        <li class="active__button active__button_send"></li>
-        <li class="active__button active__button_save"></li>
-      </ul>
-    </template>
-    <script src="./index.js"></script>
-  </body>
+        <p class="poem-box__author"></p>
+      </div>
+    </article>
+  </template>
+  <template id="buttons">
+    <ul class="active__buttons">
+      <li class="active__button active__button_copy"></li>
+      <li class="active__button active__button_share"></li>
+      <li class="active__button active__button_refresh"></li>
+      <li class="active__button active__button_send"></li>
+      <li class="active__button active__button_save"></li>
+    </ul>
+  </template>
+  <script src="scripts/popup.js"></script>
+  <script src="scripts/index.js"></script>
+</body>
+
 </html>
