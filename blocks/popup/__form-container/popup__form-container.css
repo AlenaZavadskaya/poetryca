@@ -1,0 +1,6 @@
+.popup__form-container {
+    min-width: calc(348 * 2 / 1920 * 100%);
+    visibility: hidden;
+    opacity: 0;
+    height: 0; 
+}
