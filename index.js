@@ -7,21 +7,17 @@ const activeButtons = document.querySelector('#buttons').content;
 //Тут храним последние слова из ненайденной фразы
 let findingArray = [];
 
-
-
 //Рекурсивная функция
 function getPoem(keyPhrase) {
-
+  console.log('Начали поиск по фразе: ' + keyPhrase);
   //Базовый случай 
   if(keyPhrase.length === 0) {
     //тут прерываем выполнение программы
-    console.log('выполнение прервано - список посиска пуст');
     return;
   } 
   //Рекурсивный случай
   //Массив хранения элементов одной поэмы
   //Тут хранить массив строк (p) одной поэмы
-  
   fetch(`https://buymebuyme.xyz?q=${keyPhrase[0]}`, {
     method: "GET",
   })
@@ -29,14 +25,12 @@ function getPoem(keyPhrase) {
       return res.json();
     })
     .then((listOfPoems) => {
-      let poemElements = [];
+      //let poemElements = [];
       //Если есть результат
-      console.log(`Начали поиск по: ${findingArray} `);
       if(listOfPoems.length > 0) {      
         //Переменная хранения результата
         let resultPoemObject = returnPoemResult(listOfPoems);
-        //Вот результат:
-        console.log(resultPoemObject);
+        console.log(resultPoemObject.fields.text)
         //Вхождение точно есть
         //Разбиваем неразмеченный текст на фразы
         //И добавляем в массив объектов для формирования Одной поэмы
@@ -47,14 +41,11 @@ function getPoem(keyPhrase) {
         //Очищаем текст от аннотаций
         
         let [clearPoemTextList, annots] = clearPoemAnnots(poemTextList);
-        console.log(clearPoemTextList);
         let poemElements = addPoemParts(clearPoemTextList, annots);
         //Удаляем последний пустой элемент
         poemElements.pop();
 
         //Показываем стихотворение
-        console.log('Начинаем отрисовку');
-        console.log(poemElements);
         renderPoem(poemElements, poemsContainer);
         //Проверяем missingWords.length
         //Если после разметки что-то осталось, то 
@@ -64,8 +55,6 @@ function getPoem(keyPhrase) {
           findingArray[0] = newPrase;    
           getPoem(findingArray);
         }
-
-
       } else {
         //Если не нашли полное вхождение
         //Разбиваем фразу на массив по пробелам
@@ -75,30 +64,21 @@ function getPoem(keyPhrase) {
           //Фраза состоит из нескольких слов
           //Выдергиваем последнее и формируем новый массив
           let lastWord = firstWordsList.pop();
-          console.log('не нашли полное вхождение');
           let firstWords = firstWordsList.join(' ');
           findingArray.splice(0, 1, firstWords, lastWord);
           
           //Рекурсивно ищем то что получили
-          getPoem(findingArray);
-
-          
+          getPoem(findingArray);         
         } else {
           //В этом блоке мы не нашли входение
           //И слов у нас 1 или нет
           //Возвращаем блок отрывка с текстом ошибки "не найдено!"
-
           const noFindMessageNode = document.createElement('p');
-          
           noFindMessageNode.classList.add('poem-box__paragraph', 'poem__paragraph_error');
-          
           noFindMessageNode.textContent = 'Извините, мы не нашли такое слово...';
           let noFindMessageNodeList = []
           noFindMessageNodeList.push(noFindMessageNode); 
-          console.log(noFindMessageNode);
-          console.log(noFindMessageNodeList);
           renderPoem(noFindMessageNodeList, poemsContainer);
-
         }
       }
     })
@@ -126,7 +106,6 @@ function checkPoemResult(listOfPoems) {
     //возвращаем его
     return listOfPoems[0];
   } else {
-    //console.log('несколько вариантов вхождения');
     //Вариантов несколько
     //Тут проверяем все варианты на последнее пользовательское стихотворение,
     //Если оно было
@@ -141,8 +120,6 @@ function addPoemParts(stringElementArray, annots) {
   //со строками стиха
   //Базовый случай
   let poemElements = [];
-  console.log(stringElementArray.length);
-  console.log(findingArray);
   if(stringElementArray.length === 0) {
     return '';
   }
@@ -152,35 +129,29 @@ function addPoemParts(stringElementArray, annots) {
   poemParagraphNode.classList.add('poem-box__paragraph');
   //Ищем вхождение
   if(stringElementArray[0].includes(findingArray[0])) {
-    console.log('нашли');
     //Разделяем текст на ["до", 'вхождение', 'после']
     const beforeAfterArray = stringElementArray[0].split(findingArray[0]);
      //Сохдаем span для выделения входжения
     const poemSpanAccentNode = document.createElement('span');
     poemSpanAccentNode.classList.add('content__accent');
     poemSpanAccentNode.textContent = findingArray[0];
-    console.log('HERE!!!');
     let [afterText, annot=''] = addAnnots(beforeAfterArray[1], annots);
-    console.log(afterText);
     //Добавляем в результат элементов поэмы тест "до" и span с вхождением
     poemParagraphNode.append(beforeAfterArray[0], poemSpanAccentNode, afterText, annot);
     //Удаляем первое значение из поискового массива
     findingArray.shift();
   } 
   else {
-    console.log('не нашли');
-    //Не нашли входение в итераци добаляем просто текст
+     //Не нашли входение в итераци добаляем просто текст
     //poemParagraphNode.textContent = stringElementArray[0]; 
-
+    poemParagraphNode.classList.add('poem-box__paragraph', 'poem-box__paragraph_notaccent', 'hidden');
     let [afterText, annot=''] = addAnnots(stringElementArray[0], annots);
-    console.log(afterText);
     //Добавляем в результат элементов поэмы тест "до" и span с вхождением
     poemParagraphNode.append(afterText, annot);
 
   } 
   poemElements.push(poemParagraphNode); 
   stringElementArray.shift();
-
   //Поиск по остаткам
   let newPoemElements = addPoemParts(stringElementArray, annots);
   return poemElements.concat(newPoemElements);
@@ -194,12 +165,10 @@ function addAnnots(text, annots) {
       let annotNumb = `[${index + 1}]`;
       let annotList = annot.split(annotNumb);
       if(text.endsWith(annotNumb)) {
-        console.log('HJKHFKJHGJDHFGKJHJK==========' + text.slice(text.indexOf(annotNumb)));
         text = text.slice(0, text.indexOf(annotNumb));
         const span = document.createElement('span');
         span.title = annotList[1];
         span.textContent = annotNumb;
-        console.log(span);
         [resText, resSpan] = [text, span];
       }   
     })
@@ -219,9 +188,7 @@ function renderPoem(poemElements, container) {
 
 
 function removePoems(container) {
-  
   const poemsNodeList = [...container.querySelectorAll('.poem-box__poem')];
-
   poemsNodeList.forEach((poem) => {
     poem.remove();
   })
@@ -244,8 +211,13 @@ formNode.addEventListener('submit', (evt) => {
   //Удаляем знаки припинания и прочие символы кроме букв
   //Ищем полное вхождение
   getPoem(findingArray);
-  /*inputNode.value.split(' ').forEach((elem) => {
-    getPoem(elem);    
-  })*/
 });
 
+poemsContainer.addEventListener('click', (evt) => {
+  if(evt.target.classList.contains('poem-box__poem')) {
+    const poemParagraphList = evt.target.querySelectorAll('.poem-box__paragraph_notaccent');
+    poemParagraphList.forEach((elem) => {
+      elem.classList.toggle('hidden');
+    })
+  }
+})
