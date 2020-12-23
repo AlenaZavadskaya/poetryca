@@ -1,0 +1,10 @@
+.popup__form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(auto-fill, auto);
+    gap: 20px 60px;
+    min-width: calc(348 * 2 / 1920 * 100%);
+    visibility: hidden;
+    height: 0;
+    
+}
