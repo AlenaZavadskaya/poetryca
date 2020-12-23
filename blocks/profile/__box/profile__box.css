@@ -1,0 +1,6 @@
+.profile__box {
+  display: flex;
+  position: relative;
+  height: 507px;
+  /* width: 42.8%; */
+}

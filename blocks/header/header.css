@@ -10,6 +10,6 @@
   flex-direction: row;
   justify-content: space-between;
 	align-items: center;
-	margin-top: 8px;
+	height: 88px;
   /* max-width: 1644px; */
 }

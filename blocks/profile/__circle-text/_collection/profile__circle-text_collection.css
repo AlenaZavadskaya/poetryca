@@ -1,0 +1,9 @@
+.profile__circle-text_collection {
+  background-image: url("../../../../images/text\ -collection.svg");
+  width: 315.37px;
+  height: 464.18px;
+  transform: rotate(1deg);
+  position: absolute;
+  left: -110px;
+  top: -10px;
+}

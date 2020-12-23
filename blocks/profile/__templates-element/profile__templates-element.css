@@ -1,0 +1,19 @@
+.profile__templates-element {
+  list-style: none;
+  width: 462px;
+  min-height: 40px;
+  margin: 0 0 30px;
+  font-family: SF Pro Text;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 22px;
+  color: #fff7bb;
+  /* background: linear-gradient(90deg, #2e2e30 21.75%, #161618 100%); */
+  box-shadow: 14.4843px 14.4843px 19.3124px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+}
+
+.profile__templates-element:hover {
+  opacity: 0.7;
+}
