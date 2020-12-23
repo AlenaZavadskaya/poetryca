@@ -1,8 +1,8 @@
 .profile__icon {
-  background-image: url(../../../images/like.svg);
+  background-image: url("../../../images/like.svg");
   width: 35px;
   height: 32px;
-  background: rgba(255, 255, 255);
+  /* background: rgba(255, 255, 255); */
   background-color: transparent;
 	background-position: center;
 	transition: 0.1s linear 0.1s;
