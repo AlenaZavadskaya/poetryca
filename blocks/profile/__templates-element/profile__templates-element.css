@@ -1,6 +1,7 @@
 .profile__templates-element {
   list-style: none;
-  width: 462px;
+	/* width: 462px; */
+	width: 449px;
   min-height: 40px;
 	margin: 0 0 30px;
 	padding-left: 5px;
@@ -13,6 +14,8 @@
   /* background: linear-gradient(90deg, #2e2e30 21.75%, #161618 100%); */
   box-shadow: 14.4843px 14.4843px 19.3124px rgba(0, 0, 0, 0.25);
 	border-radius: 15px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 	overflow: hidden;
 }
 
