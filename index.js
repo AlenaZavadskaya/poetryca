@@ -10,7 +10,7 @@ let findingArray = [];
 
 //Рекурсивная функция
 function getPoem(keyPhrase) {
-  console.log('Начали поиск по фразе: ' + keyPhrase);
+  console.log('Начали поиск по фразе: ' + keyPhrase[0]);
   //Базовый случай 
   if(keyPhrase.length === 0) {
     //тут прерываем выполнение программы
@@ -26,18 +26,19 @@ function getPoem(keyPhrase) {
       return res.json();
     })
     .then((listOfPoems) => {
-      //let poemElements = [];
+      let phrase = keyPhrase[0];
       //Если есть результат
       if(listOfPoems.length > 0) {      
         //Переменная хранения результата
         let resultPoemObject = returnPoemResult(listOfPoems);
-        console.log(resultPoemObject.fields.text)
         //Вхождение точно есть
         //Разбиваем неразмеченный текст на фразы
         //И добавляем в массив объектов для формирования Одной поэмы
         //Добавляем в результат для вывода
         // И ищем остальные слова в найденном тексте
         let poemText = resultPoemObject.fields.text;
+        const poemAuthor = resultPoemObject.fields.author;
+        const poemTitle = resultPoemObject.fields.name;
         let poemTextList = poemText.split('\n');
         //Очищаем текст от аннотаций
         
@@ -47,7 +48,7 @@ function getPoem(keyPhrase) {
         poemElements.pop();
 
         //Показываем стихотворение
-        renderPoem(poemElements, poemsContainer);
+        renderPoem(poemElements, poemsContainer, phrase, poemAuthor, poemTitle);
         //Проверяем missingWords.length
         //Если после разметки что-то осталось, то 
         if(findingArray.length !== 0) {
@@ -67,7 +68,7 @@ function getPoem(keyPhrase) {
           let lastWord = firstWordsList.pop();
           let firstWords = firstWordsList.join(' ');
           findingArray.splice(0, 1, firstWords, lastWord);
-          
+          console.log('не нашли ' + findingArray)
           //Рекурсивно ищем то что получили
           getPoem(findingArray);         
         } else {
@@ -79,7 +80,7 @@ function getPoem(keyPhrase) {
           noFindMessageNode.textContent = 'Извините, мы не нашли такое слово...';
           let noFindMessageNodeList = []
           noFindMessageNodeList.push(noFindMessageNode); 
-          renderPoem(noFindMessageNodeList, poemsContainer);
+          renderPoem(noFindMessageNodeList, poemsContainer, phrase);
         }
       }
     })
@@ -177,14 +178,22 @@ function addAnnots(text, annots) {
   return [resText, resSpan]
 };
 
-function renderPoem(poemElements, container) {
-  let poemElement = poemTemplate.cloneNode(true);
-  let poemTextBoxNode = poemElement.querySelector('.poem-box__text');
+function renderPoem(poemElements, container, keyPhrase, author = '', title = '', ) {
+  let poemBoxPoemNode = poemTemplate.cloneNode(true);
+  poemBoxPoemNode.querySelector('.poem-box__poem').dataset.phrase = keyPhrase;
+  if(poemElements.length == 1 && poemElements[0].classList.contains('poem__paragraph_error')) {
+    const likeButton = poemBoxPoemNode.querySelector('.poem-box__but-box').remove();;
+  }
+  if(author && title) {
+    const poemAutorTiileNode = poemBoxPoemNode.querySelector('.poem-box__author');
+    poemAutorTiileNode.textContent = author + ', ' + title;
+  }
+  let poemTextBoxNode = poemBoxPoemNode.querySelector('.poem-box__text');
   poemElements.forEach((node) => {
     poemTextBoxNode.append(node);
 	})
 	buttonsContainer.append(activeButtons);
-  container.append(poemElement);
+  container.append(poemBoxPoemNode);
 }
 
 
@@ -195,15 +204,20 @@ function removePoems(container) {
   })
 }
 
-
 function returnPoemResult(listOfPoems) {
   const index = Math.floor(Math.random() * listOfPoems.length);
   return listOfPoems[index];
 }
 
 function removePageFullHeight(pageNode){
-  pageNode.classList.remove('page_fullheight')
-};
+  pageNode.classList.remove('page_fullheight');
+}
+
+function refreshPoemExcerpt(refreshButtonNode) {
+  const poemNode = refreshButtonNode.closest('.poem-box__poem');
+  findingArray = [poemNode.dataset.phrase];
+  getPoem(findingArray);
+}
 
 formNode.addEventListener('submit', (evt) => {
   evt.preventDefault();
@@ -224,5 +238,7 @@ poemsContainer.addEventListener('click', (evt) => {
     poemParagraphList.forEach((elem) => {
       elem.classList.toggle('hidden');
     })
+  } else if(evt.target.classList.contains('poem-box__refresh-but')) {
+    refreshPoemExcerpt(evt.target);
   }
 })
