@@ -2,9 +2,12 @@ const singInLink = document.querySelector('.header__profile');
 const popupSingInNode = document.querySelector('.popup_type_singin');
 const popupContainer = popupSingInNode.querySelector('.popup__container');
 const formContainerList = popupSingInNode.querySelectorAll('.popup__form-container');
-const regSwitch = popupSingInNode.querySelector('.popup__button_type_switch-reg');
-const singInSwitch = popupSingInNode.querySelector('.popup__button_type_switch-singIn');
+const regSwitch = popupSingInNode.querySelector('.popup__switch_type_switch-reg');
+const singInSwitch = popupSingInNode.querySelector('.popup__switch_type_switch-singin');
 
+const regFormNode = document.forms.registrationForm;
+const formFieldsetList = regFormNode.querySelectorAll('.popup__fieldset');
+const nextButton = regFormNode.querySelector('.popup__button_type_next');
 
 function openPopup(evt, popupElement) {
     evt.preventDefault();
@@ -38,6 +41,13 @@ function switchForm(evt) {
     })
 }
 
+function switchFieldset(evt) {
+    formFieldsetList.forEach(elem => {
+        elem.classList.toggle('popup__fieldset_current')
+    })
+}
+
+
 singInLink.addEventListener('click', (evt) => {    
     openPopup(evt, popupSingInNode)
 })
@@ -54,4 +64,8 @@ regSwitch.addEventListener('click', (evt) => {
 
 singInSwitch.addEventListener('click', (evt) => {
     switchForm(evt);
+})
+
+nextButton.addEventListener('click', (evt) => {
+    switchFieldset(evt);
 })

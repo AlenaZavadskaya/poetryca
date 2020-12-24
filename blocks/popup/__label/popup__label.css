@@ -1,0 +1,8 @@
+.popup__label {
+    margin-top: 24px;
+    font-family: 'SF Pro Text', sans-serif;
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 22px;
+    color: rgba(255, 255, 255, .6);
+}
