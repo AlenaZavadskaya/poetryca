@@ -1,0 +1,8 @@
+.popup__pseudo-item_type_checkbox {
+    display: inline-block;
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #fff7bb;
+    border-radius: 4px;
+}

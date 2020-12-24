@@ -1,7 +1,0 @@
-.popup__form {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(auto-fill, auto);
-    gap: 20px 60px;
-    margin: 40px 0 0px;  
-}

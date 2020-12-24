@@ -1,0 +1,11 @@
+.popup__input_type_policy {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+}
+
+.popup__input_type_policy:checked + .popup__pseudo-item_type_checkbox {
+    background-image: url(../../../../images/popup/popup-input-checked.png);
+}
