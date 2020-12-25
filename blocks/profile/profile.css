@@ -33,9 +33,19 @@
 
 
 
-
-
-
+/* 
+.circle {
+	-webkit-clip-path: circle(50% at 50% 50%);
+clip-path: circle(50% at 50% 50%);
+background-color: lawngreen;
+opacity: .7;
+width: 503px;
+height: 545px;
+position: relative;
+top: 50px;
+left: 50px;
+}
+ */
 
 
 

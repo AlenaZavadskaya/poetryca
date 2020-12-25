@@ -23,10 +23,10 @@ function getPoem(keyPhrase) {
   fetch(`https://buymebuyme.xyz?q=${keyPhrase[0]}`, {
     method: "GET",
   })
-    .then((res) => {
+		.then((res) => {
       return res.json();
     })
-    .then((listOfPoems) => {
+		.then((listOfPoems) => {
       let phrase = keyPhrase[0];
       //Если есть результат
       if(listOfPoems.length > 0) {      
@@ -180,7 +180,7 @@ function addAnnots(text, annots) {
   return [resText, resSpan]
 };
 
-function renderPoem(poemElements, container, keyPhrase, author = '', title = '', ) {
+function renderPoem(poemElements, container, keyPhrase, author = '', title = '',) {
   let poemBoxPoemNode = poemTemplate.cloneNode(true);
   poemBoxPoemNode.querySelector('.poem-box__poem').dataset.phrase = keyPhrase;
   if(poemElements.length == 1 && poemElements[0].classList.contains('poem__paragraph_error')) {
@@ -237,6 +237,7 @@ formNode.addEventListener('submit', (evt) => {
 });
 
 poemsContainer.addEventListener('click', (evt) => {
+
   if(evt.target.classList.contains('poem-box__poem')) {
     const poemParagraphList = evt.target.querySelectorAll('.poem-box__paragraph_notaccent');
     poemParagraphList.forEach((elem) => {
@@ -246,3 +247,6 @@ poemsContainer.addEventListener('click', (evt) => {
     refreshPoemExcerpt(evt.target);
   }
 })
+
+
+// 'https://script.google.com/macros/s/AKfycbzc1Vnls0Q59zJufwSHSbRiMJl5emj743LbVCVSg1Fd46ZL-xiG/exec'

@@ -42,23 +42,28 @@
 
 
   <section class="poem-box" id="poem-box"></section>
-  <section class="poem-box" id="activeButtons"></section>
+	<section class="poem-box" id="activeButtons"></section>
+	
+	
+
   <footer class="footer">
     <p class="footer__logo">POETRYCA</p>
     <p class="footer__copyright">&copy; All rights reserved. Poetryca 2025</p>
-  </footer>
+	</footer>
+	
   <div class="popup popup_type_singin">
     <div class="popup__container">
       <div class="popup__form-container popup__form-container_current">
         <img src="images/popup/popup-singin.png" alt="#" class="popup__image">
         <h2 class="popup__title">Вход</h2>
-        <form name="singin-form" class="popup__form  popup__form_type_singin">
+        <form name="signinForm" class="popup__form  popup__form_type_singin">
           <fieldset class="popup__fieldset popup__fieldset_current">
             <legend class="popup__subtitle">
               Добро&nbsp;пожаловать! Войдите,&nbsp;чтобы&nbsp;продолжить
             </legend>
-            <input type="email" class="popup__input popup__input_type_email" placeholder="Email" required>
-            <input type="password" class="popup__input popup__input_type_password" placeholder="Пароль" required>
+						<!-- <input type="email" id="email" class="popup__input popup__input_type_email" placeholder="Email" required> -->
+						<input type="text" id="userName" class="popup__input popup__input_type_email" placeholder="Имя" required>
+            <input type="password" id="password" class="popup__input popup__input_type_password" placeholder="Пароль" required>
             <button type="submit" class="button popup__button popup__button_type_submit">Войти</button>
           </fieldset>
         </form>
@@ -75,7 +80,7 @@
             <p class="popup__subtitle">
               Добро пожаловать! Давайте&nbsp;знакомиться,&nbsp;сначала&nbsp;создайте&nbsp;аккаунт
             </p>
-            <input type="" class="popup__input popup__input_type_text" placeholder="Имя" required>
+            <input type="name" class="popup__input popup__input_type_text" placeholder="Имя" required>
             <input type="tel" class="popup__input popup__input_type_tel" placeholder="Телефон" required>
             <input type="email" class="popup__input popup__input_type_email" placeholder="Email" required>
             <button type="button" class="button popup__button popup__button_type_next">Далее</button>
@@ -121,9 +126,10 @@
       <li class="active__button active__button_send"></li>
       <li class="active__button active__button_save"></li>
     </ul>
-  </template>
-  <script src="scripts/popup.js"></script>
-  <script src="scripts/index.js"></script>
+	</template>
+  <script src="scripts/data.js"></script>
+	<script src="scripts/popup.js"></script>
+	<script src="scripts/index.js"></script>
 </body>
 
 </html>
