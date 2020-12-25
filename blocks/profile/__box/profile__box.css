@@ -1,6 +1,11 @@
 .profile__box {
   display: flex;
   position: relative;
-  height: 507px;
+  min-height: 507px;
   /* width: 42.8%; */
+  background-image: linear-gradient(to left, black, #2e2e30);
+}
+
+.profile__box:last-child {
+  background-image: linear-gradient(to right, black, #2e2e30);
 }
