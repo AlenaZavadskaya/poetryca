@@ -2,6 +2,7 @@ const pageNode = document.querySelector('.page');
 const formNode = document.forms.generate;
 const inputNode = formNode.elements.words;
 const poemsContainer = document.querySelector('#poem-box');
+const content = pageNode.querySelector('.content');
 const poemTemplate = document.querySelector('#poem-template').content;
 const buttonsContainer = document.querySelector('#activeButtons');
 const activeButtons = document.querySelector('#buttons').content;
@@ -80,7 +81,8 @@ function getPoem(keyPhrase) {
           noFindMessageNode.textContent = 'Извините, мы не нашли такое слово...';
           let noFindMessageNodeList = []
           noFindMessageNodeList.push(noFindMessageNode); 
-          renderPoem(noFindMessageNodeList, poemsContainer, phrase);
+					renderPoem(noFindMessageNodeList, poemsContainer, phrase);
+					content.classList.add('page_fullheight');
         }
       }
     })
@@ -193,7 +195,8 @@ function renderPoem(poemElements, container, keyPhrase, author = '', title = '',
     poemTextBoxNode.append(node);
 	})
 	buttonsContainer.append(activeButtons);
-  container.append(poemBoxPoemNode);
+	container.append(poemBoxPoemNode);
+	content.classList.add('page_fullheight');
 }
 
 
@@ -209,9 +212,9 @@ function returnPoemResult(listOfPoems) {
   return listOfPoems[index];
 }
 
-function removePageFullHeight(pageNode){
-  pageNode.classList.remove('page_fullheight');
-}
+// function removePageFullHeight(pageNode){
+//   pageNode.classList.remove('page_fullheight');
+// }
 
 function refreshPoemExcerpt(refreshButtonNode) {
   const poemNode = refreshButtonNode.closest('.poem-box__poem');
@@ -229,7 +232,8 @@ formNode.addEventListener('submit', (evt) => {
   //Удаляем знаки припинания и прочие символы кроме букв
   //Ищем полное вхождение
   getPoem(findingArray);
-  removePageFullHeight(pageNode);
+	// removePageFullHeight(pageNode);
+	content.classList.add('.page_fullheight');
 });
 
 poemsContainer.addEventListener('click', (evt) => {
