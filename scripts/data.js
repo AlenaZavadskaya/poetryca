@@ -10,103 +10,29 @@ form.addEventListener("submit", (e) => {
     .catch((error) => console.error("Error!", error.message));
 });
 
+//  сохранение данных при регистрации в google таблице
+const script2URL =
+  "https://script.google.com/macros/s/AKfycbxl7q2Kq2-rqEZ9Wp6o44kIGNQ7TYagcPAgDshsa0uclv39rpc/exec";
+const form2 = document.forms["registrationForm"];
 
-//  сбор данных из google таблицы в формате json
-function getData() {
-  // fetch (("https://cors-anywhere.herokuapp.com/" + scriptURL), { method: 'GET' })
-  fetch(
-    "https://spreadsheets.google.com/feeds/cells/18msT1_mxFbYUzReCGgMYNFNBzwOROwPHCD-Irq10cSM/1/public/full?alt=json"
-  )
-    .then((response) => response.json())
-    .then((json) => {
-      // Do something with the data
-      console.log(json.feed.entry[3].content.$t);
-      console.log(json);
-    });
-}
-
-getData(console.log("test"));
+form2.addEventListener("submit", (e) => {
+  e.preventDefault();
+  fetch(script2URL, { method: "POST", body: new FormData(form2) })
+    .then((response) => console.log("Success!", response))
+    .catch((error) => console.error("Error!", error.message));
+});
 
 
-//  сбор данных из сервиса sheety (ограниченное кол-во запросов)
-function getDataSheety() {
-  fetch(
-    "https://api.sheety.co/2f181410692d9f6393bb28e1f0ab2015/poetryWords/sheet1"
-  )
-    .then((response) => response.json())
-    .then((json) => {
-      // Do something with the data
-      console.log(json.sheet1[0].words);
-    });
-}
+//  сохранение данных при входе в google таблице
+const script3URL =
+  "https://script.google.com/macros/s/AKfycbyo-ryBkORvjaBbbE-JsNG-LZ8mydau2Xg1QMeo35JHxJNBdvw/exec";
+const form3 = document.forms["signinForm"];
 
-getDataSheety(console.log("test1"));
+form3.addEventListener("submit", (e) => {
+  e.preventDefault();
+  fetch(script3URL, { method: "POST", body: new FormData(form3) })
+    .then((response) => console.log("Success!", response))
+    .catch((error) => console.error("Error!", error.message));
+});
 
-// костыли с localStorage
 
-// localstorage для попапа
-// const input = document.querySelector(".content__form-input");
-// const container = document.querySelector(".profile__templates-element");
-
-// input.value = localStorage.getItem("content__form-input");
-// input.oninput = () => {
-//   localStorage.setItem("content__form-input", input.value);
-//   localStorage.setItem("profile__templates-element", input.value);
-// };
-
-// const inputName = document.querySelector(".popup__input_type_text");
-// const inputTel = document.querySelector(".popup__input_type_tel");
-// const inputEmail = document.querySelector(".popup__input_type_email");
-// const inputPassword = document.querySelector(".popup__input_type_password");
-// const inputPassRepeat = document.querySelector(
-//   ".popup__input_type_password-repeat"
-// );
-// const inputEmailEnter = document.querySelector("#userName");
-// const inputPasswordEnter = document.querySelector("#password");
-
-// inputName.value = localStorage.getItem("popup__input_type_text");
-// inputName.oninput = () => {
-//   localStorage.setItem("popup__input_type_text", inputName.value);
-//   localStorage.setItem("header__profile-enter", inputName.value);
-// };
-
-// inputTel.value = localStorage.getItem("popup__input_type_tel");
-// inputTel.oninput = () => {
-//   localStorage.setItem("popup__input_type_tel", inputTel.value);
-// };
-
-// inputEmail.value = localStorage.getItem("popup__input_type_email");
-// inputEmail.oninput = () => {
-//   localStorage.setItem("popup__input_type_email", inputEmail.value);
-// };
-
-// inputPassword.value = localStorage.getItem("popup__input_type_password");
-// inputPassword.oninput = () => {
-//   localStorage.setItem("popup__input_type_password", inputPassword.value);
-// };
-
-// inputPassRepeat.value = localStorage.getItem(
-//   "popup__input_type_password-repeat"
-// );
-// inputPassRepeat.oninput = () => {
-//   localStorage.setItem(
-//     "popup__input_type_password-repeat",
-//     inputPassRepeat.value
-//   );
-// };
-
-// inputEmailEnter.value = localStorage.getItem("#userName");
-// inputEmailEnter.oninput = () => {
-//   localStorage.setItem("#userName", inputEmailEnter.value);
-//   localStorage.setItem("header__profile-enter", inputEmailEnter.value);
-// };
-
-// inputPasswordEnter.value = localStorage.getItem("#password");
-// inputPasswordEnter.oninput = () => {
-//   localStorage.setItem("#password", inputPasswordEnter.value);
-// };
-
-// // костыль, работающий
-// const user = document.querySelector(".header__profile-enter");
-// // user.textContent = inputName.value;
-// user.textContent = inputEmailEnter.value;
