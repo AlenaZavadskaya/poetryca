@@ -13,5 +13,6 @@
 
 .header__link:hover {
   color: rgb(209, 207, 207);
-	cursor: pointer;
+	cursor: url("../../../images/bi_cursor-fill.svg"), auto;
+  
 }

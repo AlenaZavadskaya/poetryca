@@ -14,7 +14,7 @@
 @import url(./__circle-text/_collection/profile__circle-text_collection.css);
 @import url(./__templates-collection/profile__templates-collection.css);
 @import url(./__title-box/_template/profile__title-box_template.css);
-
+@import url(./__templates-element/_collection/profile__templates-element_collection_hover.css);
 
 .page__profile {
   /* background-image: linear-gradient(to left, black, #2e2e30); */

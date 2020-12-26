@@ -1,4 +1,7 @@
 .poem-box__text {
 	min-height: 92px;
 	max-width: 90%;
+
+	margin: 60px auto;
+	
 }
