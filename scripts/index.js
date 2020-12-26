@@ -249,4 +249,3 @@ poemsContainer.addEventListener('click', (evt) => {
 })
 
 
-// 'https://script.google.com/macros/s/AKfycbzc1Vnls0Q59zJufwSHSbRiMJl5emj743LbVCVSg1Fd46ZL-xiG/exec'
