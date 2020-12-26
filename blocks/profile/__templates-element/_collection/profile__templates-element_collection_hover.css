@@ -1,0 +1,9 @@
+.profile__templates-element_collection_hover {
+
+}
+
+.profile__templates-element_collection_hover:hover {
+    background-image: none;
+    background-color: #FFF7BB;
+    color:black;
+}

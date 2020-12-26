@@ -8,3 +8,7 @@
   line-height: 29px;
   text-decoration: none;
 }
+
+.header__logo:hover {
+  cursor: url("../../../images/bi_cursor-fill.svg"), auto;
+}
