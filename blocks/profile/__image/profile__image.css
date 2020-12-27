@@ -1,0 +1,9 @@
+.profile__image {
+  background-image: url(../../../images/1494399423149468392-removebg-preview\ 1.png);
+  position: absolute;
+  top: 11px;
+  right: -88px;
+  width: 175px;
+  height: 243px;
+  z-index: 2;
+}

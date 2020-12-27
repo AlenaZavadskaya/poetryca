@@ -1,0 +1,11 @@
+.popup__form-container {
+    max-width: 385px;
+    width: 50%;
+    visibility: hidden;
+    opacity: 0;
+    height: 0; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;   
+}

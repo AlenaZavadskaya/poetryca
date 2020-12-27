@@ -1,0 +1,18 @@
+@import url(./__button/active__button.css);
+@import url(./__button/_copy/active__button_copy.css);
+@import url(./__button/_refresh/active__button_refresh.css);
+@import url(./__button/_save/active__button_save.css);
+@import url(./__button/_send/active__button_send.css);
+@import url(./__button/_share/active__button_share.css);
+
+.active__buttons {
+	display: flex;
+	justify-content: space-between;
+	max-width: 825px;
+	min-height: 70px;
+	list-style: none;
+	padding: 0;
+	margin: 0 auto 150px;
+	transition: 0.1s linear 0.1s;
+}
+

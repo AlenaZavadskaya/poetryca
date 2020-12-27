@@ -1,0 +1,71 @@
+@import url(./__template/profile__template.css);
+@import url(./__title-box/profile__title-box.css);
+@import url(./__title/profile__title.css);
+@import url(./__icon/profile__icon.css);
+@import url(./__icon/_template/profile__icon_template.css);
+@import url(./__box/profile__box.css);
+@import url(./__templates/profile__templates.css);
+@import url(./__templates-element/profile__templates-element.css);
+@import url(./__circle/profile__circle.css);
+@import url(./__circle-text/profile__circle-text.css);
+@import url(./__image/profile__image.css);
+@import url(./__collections/profile__collections.css);
+@import url(./__circle-collection/profile__circle-collection.css);
+@import url(./__circle-text/_collection/profile__circle-text_collection.css);
+@import url(./__templates-collection/profile__templates-collection.css);
+@import url(./__title-box/_template/profile__title-box_template.css);
+@import url(./__templates-element/_collection/profile__templates-element_collection_hover.css);
+
+.page__profile {
+  /* background-image: linear-gradient(to left, black, #2e2e30); */
+  background: linear-gradient(270.4deg, #161618 0.36%, #2e2e30 99.68%);
+}
+
+.profile {
+  display: flex;
+  margin: 72px auto 84px;
+  width: 1640px;
+}
+
+
+
+
+
+
+
+/* 
+.circle {
+	-webkit-clip-path: circle(50% at 50% 50%);
+clip-path: circle(50% at 50% 50%);
+background-color: lawngreen;
+opacity: .7;
+width: 503px;
+height: 545px;
+position: relative;
+top: 50px;
+left: 50px;
+}
+ */
+
+
+
+
+
+
+
+.profile__templates-element_collection {
+  background: linear-gradient(90.03deg, #2e2e30 5.43%, #161618 99.86%);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

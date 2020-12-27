@@ -1,0 +1,9 @@
+.popup__subtitle {
+    margin: 0 0 5.12vh;
+    font-family: 'SF Pro Text', sans-serif;
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 22px;
+    text-align: center;
+    color: rgba(255, 255, 255, .6);
+}

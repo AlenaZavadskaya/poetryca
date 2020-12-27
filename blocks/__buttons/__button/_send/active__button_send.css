@@ -1,0 +1,8 @@
+.active__button_send {
+	background-image: url(../../../../images/send-white.svg);
+	width: 68px;
+}
+
+.active__button_send:hover {
+	background-image: url(../../../../images/send-active.svg);
+}

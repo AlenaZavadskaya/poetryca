@@ -1,0 +1,14 @@
+.header__logo {
+  margin: 0;
+  color: #fcf7b7;
+  font-family: SF Pro Text;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  text-decoration: none;
+}
+
+.header__logo:hover {
+  cursor: url("../../../images/bi_cursor-fill.svg"), auto;
+}

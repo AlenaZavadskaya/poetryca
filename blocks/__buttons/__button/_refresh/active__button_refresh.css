@@ -1,0 +1,7 @@
+.active__button_refresh {
+	background-image: url(../../../../images/refresh-white.svg);
+}
+
+.active__button_refresh:hover {
+	background-image: url('../../../../images/refresh-active\ \(2\).svg');
+}

@@ -1,0 +1,11 @@
+.poem-box__author {
+  font-family: Cormorant;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 44px;
+  text-align: right;
+  margin: 0;
+  color: #fff7bb;
+  max-width: 550px;
+}

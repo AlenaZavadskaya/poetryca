@@ -1,0 +1,44 @@
+.content__form-button {
+  background-image: linear-gradient(to left, black, #2e2e30);
+  border: 0;
+  border-radius: 50px;
+  color: #fff7bb;
+  font-size: 16px;
+  min-height: 57px;
+  box-shadow: -1px -3px 10px rgba(247, 243, 243, 0.308);
+  font-family: SF Pro Text;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: 0.1s linear 0.1s;
+  outline: none;
+}
+
+.content__form-button:hover {
+  opacity: 0.7;
+  cursor: inherit;
+  background-image: none;
+  background-color: #FFF7BB;
+  color: black;
+  opacity: 1;
+}
+
+/* .content__form-button:focus {
+  background-image: unset;
+  background-color: #fff7bb;
+  color: black;
+  cursor: inherit;
+} */
+
+.author {
+  width: 508px;
+  margin: 0 auto 120px;
+  height: 57px;
+  background: linear-gradient(90.03deg, #2e2e30 5.43%, #161618 99.86%);
+  box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.25),
+    -15px -15px 30px rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+}

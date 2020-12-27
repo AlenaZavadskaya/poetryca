@@ -1,0 +1,5 @@
+.profile__title-box {
+  display: flex;
+  justify-content: flex-end;
+  margin: 85px 5px  33px;
+}

@@ -1,0 +1,25 @@
+.button {
+    background-image: linear-gradient(to left, #2e2e30,  #161618);
+    border-radius: 24px;
+    padding: 15px 0;
+    box-shadow: 15px 15px 20px rgba(0, 0, 0, .25), -15px -15px 30px rgba(255, 255, 255, .12);
+    transition: opacity .5s; 
+    font-size: 16px;
+    border: none;
+    font-family: 'SF Pro Text', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: #fff7bb;
+    cursor: pointer;
+}
+
+.button:hover {
+    opacity: .7;
+}
+
+.button:focus {
+    background-image: none;
+    background-color: #fff7bb;
+    color: #161618;
+    outline: none;
+}

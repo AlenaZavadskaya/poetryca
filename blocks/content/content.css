@@ -1,0 +1,15 @@
+@import url(./__accent/content__accent.css);
+@import url(./__container/content__container.css);
+@import url(./__title/content__title.css);
+@import url(./__subtitle/content__subtitle.css);
+@import url(./__image/content__image.css);
+@import url(./__form/content__form.css);
+@import url(./__form-input/content__form-input.css);
+@import url(./__form-button/content__form-button.css);
+
+
+.content {
+  display: flex;
+  max-width: 1075px;
+  margin: 87px auto 282px;
+}

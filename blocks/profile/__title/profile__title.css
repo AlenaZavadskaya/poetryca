@@ -1,0 +1,14 @@
+.profile__title {
+  width: 232px;
+  height: 57px;
+  left: 685px;
+  top: 275px;
+  font-family: SF Pro Text;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: right;
+  color: rgba(229, 229, 229, 0.15);
+  margin: 0 8px 0 0;
+}

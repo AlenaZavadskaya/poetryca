@@ -1,0 +1,20 @@
+.page {
+  background-image: url("../../images/Ellipse9.svg"),
+    linear-gradient(to left, black, #2e2e30);
+  background-repeat: no-repeat;
+  background-position: top;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+	cursor: url("../../images/bi_cursor-fill.svg"), auto;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	text-rendering: optimizeLegibility;
+}
+
+.page-margin {
+  margin: 0 138px;
+}

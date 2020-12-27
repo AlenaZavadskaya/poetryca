@@ -1,0 +1,14 @@
+@import url(./__author/poem-box__author.css);
+@import url(./__but-box/poem-box__but-box.css);
+@import url(./__container/poem-box__container.css);
+@import url(./__like-but/poem-box__like-but.css);
+@import url(./__refresh-but/poem-box__refresh-but.css);
+@import url(./__poem/poem-box__poem.css);
+@import url(./__text/poem-box__text.css);
+@import url(./__paragraph/poem-box__paragraph.css);
+
+.poem-box {
+	width: 1072px;
+	margin: 0 auto;
+}
+

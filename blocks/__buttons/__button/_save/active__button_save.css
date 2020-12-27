@@ -1,0 +1,7 @@
+.active__button_save {
+	background-image: url(../../../../images/save-white.svg);
+}
+
+.active__button_save:hover {
+	background-image: url('../../../../images/save-active-yellow.svg');
+}

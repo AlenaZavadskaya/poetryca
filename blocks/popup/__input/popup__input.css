@@ -1,0 +1,30 @@
+.popup__input {
+    border-radius: 20px;
+    padding: 12px 30px;
+    background-color: #c4c4c4;
+    border: none;
+    transition: opacity 0.5s, background-color 0.6s;
+    font-family: 'SF Pro Text', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: #161618;
+    box-sizing: border-box;
+    margin-bottom: 24px;
+}
+
+.popup__input:last-of-type {
+    margin-bottom: 0;
+}
+
+
+.popup__input:focus {
+    outline: none;
+    background-color: #fff7bb;
+}
+
+.popup__input::placeholder {
+    color: #161618;
+    font-family: 'SF Pro Text', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+}

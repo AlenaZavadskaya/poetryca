@@ -1,0 +1,14 @@
+.profile__box {
+  display: flex;
+  position: relative;
+  min-height: 507px;
+  /* width: 42.8%; */
+  background-image: linear-gradient(to left, black, #2e2e30);
+  border-radius: 0 20px 20px 0;
+  
+}
+
+.profile__box:last-child {
+  background-image: linear-gradient(to right, black, #2e2e30);
+  border-radius: 20px 0 0 20px;
+}

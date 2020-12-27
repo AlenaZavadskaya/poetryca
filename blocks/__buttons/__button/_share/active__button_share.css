@@ -1,0 +1,8 @@
+.active__button_share {
+	background-image: url(../../../../images/share-white.svg);
+	width: 68px;
+}
+
+.active__button_share:hover {
+	background-image: url('../../../../images/share-active\ \(2\).svg');
+}

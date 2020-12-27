@@ -1,0 +1,12 @@
+.poem-box__paragraph {
+	font-family: SF Pro Text;
+	font-style: normal;
+	font-weight: 300;
+	font-size: 28px;
+	line-height: 45px;
+	text-align: center;
+	color: #FFFFFF;
+	margin: 0 auto;
+
+	vertical-align: baseline;
+}

@@ -1,0 +1,16 @@
+.poem-box__like-but {
+	background: url(../../../images/Vector.svg);
+	width: 40px;
+	height: 36px;
+	padding: 0;
+	margin: 8px 0 0 30px;
+	background-color: transparent;
+	background-size: contain;
+	background-repeat: no-repeat;
+	transition: 0.1s linear 0.1s;
+
+}
+
+.poem-box__like-but:hover {
+	background-image: url(../../../images/like-active.svg);
+}
