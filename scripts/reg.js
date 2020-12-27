@@ -1,4 +1,7 @@
 const userNameNode = document.querySelector('.header__profile-enter');
+const regForm = document.forms["registrationForm"];
+const signInForm = document.forms["signinForm"];
+const scriptURL = "https://script.google.com/macros/s/AKfycbxl7q2Kq2-rqEZ9Wp6o44kIGNQ7TYagcPAgDshsa0uclv39rpc/exec";
 
 //  сохранение данных из поля ввода в google таблице
 //const scriptURL ="https://script.google.com/macros/s/AKfycbySR1Xr-2Rx7LgI3-FiFBWYitKj-IaC7-WZ8qA8GFsM-jvqckz4/exec";
@@ -12,9 +15,6 @@ form.addEventListener("submit", (e) => {
 });*/
 
 //сохранение данных при регистрации в google таблице
-const scriptURL =
-  "https://script.google.com/macros/s/AKfycbxl7q2Kq2-rqEZ9Wp6o44kIGNQ7TYagcPAgDshsa0uclv39rpc/exec";
-const regForm = document.forms["registrationForm"];
 
 regForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -50,14 +50,6 @@ function autoriseUser(cookieName){
     userNameNode.textContent = userName;
   }
 }
-
-
-
-
-//  сохранение данных при входе в google таблице
-const script3URL =
-  "https://script.google.com/macros/s/AKfycbyo-ryBkORvjaBbbE-JsNG-LZ8mydau2Xg1QMeo35JHxJNBdvw/exec";
-const signInForm = document.forms["signinForm"];
 
 signInForm.addEventListener("submit", (e) => {
   e.preventDefault();

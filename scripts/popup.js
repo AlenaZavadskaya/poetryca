@@ -90,6 +90,8 @@ nextButton.addEventListener("click", (evt) => {
   switchFieldset(evt);
 });
 
-regForm.addEventListener("submit", () => closePopup(popupSigning));
+popupSigning.addEventListener("click", (event) => closeOverlay(event, popupSigning));
 
-popupSigning.addEventListener("click", () => closeOverlay(event, popupSigning));
+regForm.addEventListener("submit", () => closePopup(popupSigning));
+signInForm.addEventListener("submit", () => closePopup(popupSigning));
+
