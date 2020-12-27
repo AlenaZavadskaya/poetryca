@@ -194,7 +194,7 @@ function renderPoem(poemElements, container, keyPhrase, author = '', title = '',
   poemElements.forEach((node) => {
     poemTextBoxNode.append(node);
 	})
-	buttonsContainer.append(activeButtons);
+
 	container.append(poemBoxPoemNode);
 	content.classList.add('page_fullheight');
 }
@@ -233,7 +233,15 @@ formNode.addEventListener('submit', (evt) => {
   //Ищем полное вхождение
   getPoem(findingArray);
 	// removePageFullHeight(pageNode);
-	content.classList.add('.page_fullheight');
+  content.classList.add('.page_fullheight');
+  setTimeout(() => {
+    buttonsContainer.append(activeButtons);
+    const saveButtonNode = document.querySelector('.active__button_save');
+    saveButtonNode.addEventListener('click', (event) => {
+      saveTemplate(event);
+    })
+  }, 500)
+  
 });
 
 poemsContainer.addEventListener('click', (evt) => {

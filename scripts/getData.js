@@ -1,11 +1,12 @@
 //  зарос на получение данных ипута из google таблицы в формате json
 function getData() {
   return fetch(
-    "https://sheets.googleapis.com/v4/spreadsheets/18msT1_mxFbYUzReCGgMYNFNBzwOROwPHCD-Irq10cSM/values/B2:B?key=AIzaSyDCpvPFFXvd8w0snHFqUPjo3hs5SNpm4z4"
+    "https://sheets.googleapis.com/v4/spreadsheets/18msT1_mxFbYUzReCGgMYNFNBzwOROwPHCD-Irq10cSM/values/A1:B?key=AIzaSyDCpvPFFXvd8w0snHFqUPjo3hs5SNpm4z4"
   )
     .then((response) => response.json())
     .then((res) => {
       let phrase = res.values;
+      console.log(phrase);
       return phrase;
     })
     .catch((err) => {
@@ -17,8 +18,17 @@ function getData() {
 function pastDataToProfileTemplates() {
   getData()
     .then((data) => {
-      const lastFive = data.slice(Math.max(data.length - 5, 1));
-      lastFive.forEach((element) => {
+      //Id пользователя
+      let userId = getCookie('userId');
+      let userExcerptList = data.reduce((result, elem) => {
+        if(elem[0] === userId) {
+          result.push(elem[1]);
+        } 
+        return result;
+      }, [])
+      console.log(userExcerptList);
+      const lastFive = userExcerptList.slice(Math.max(userExcerptList.length - 5, 1));
+      userExcerptList.forEach((element) => {
         const requestList = document.createElement("li");
         const container = document.querySelector(".profile__templates");
         requestList.classList.add("profile__templates-element");
@@ -32,6 +42,8 @@ function pastDataToProfileTemplates() {
 }
 
 pastDataToProfileTemplates();
+
+
 
 //  запрос на получение данных пользователя при входе
 function getUser() {
@@ -62,7 +74,7 @@ function putDataToProfile() {
     });
 }
 
-putDataToProfile();
+//putDataToProfile();
 
 //  запрос на получение данных при регистрации
 function getUserData() {
@@ -85,7 +97,7 @@ function getUserData() {
 
 // при входе проверяем есть ли такой зарегистрированный пользователь
 // если нет, то предлагаем зарегистрироваться
-form3.addEventListener("submit", (e) => {
+/*form3.addEventListener("submit", (e) => {
   e.preventDefault();
   getUserData()
 		.then((data) => {
@@ -106,7 +118,7 @@ form3.addEventListener("submit", (e) => {
       }
     })
     .catch((error) => console.error("Error!", error.message));
-});
+});*/
 
 
 
