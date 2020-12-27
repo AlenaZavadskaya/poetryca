@@ -3,7 +3,7 @@ const popupSigning = document.querySelector(".popup_type_singin");
 const popupRegistraiting = document.querySelector(
   ".popup__form_type_registration"
 );
-const popupContainer = popupSigning.querySelector(".popup__container");
+
 const formContainerList = popupSigning.querySelectorAll(
   ".popup__form-container"
 );
@@ -19,12 +19,14 @@ const nextButton = regFormNode.querySelector(".popup__button_type_next");
 // открыть попап
 function openPopup(popupElement) {
   popupElement.classList.add("popup_active");
+  const popupContainer = popupElement.querySelector(".popup__container");
   slideLeftPopupContainer(popupContainer);
   document.addEventListener("keydown", escapeClose);
 }
 
 // закрыть попап
 function closePopup(popupElement) {
+  const popupContainer = popupElement.querySelector(".popup__container");
   popupContainer.classList.add("slide");
   setTimeout(() => {
     popupContainer.classList.remove("slide");
@@ -91,6 +93,8 @@ nextButton.addEventListener("click", (evt) => {
 });
 
 popupSigning.addEventListener("click", (event) => closeOverlay(event, popupSigning));
+
+
 
 regForm.addEventListener("submit", () => closePopup(popupSigning));
 signInForm.addEventListener("submit", () => closePopup(popupSigning));

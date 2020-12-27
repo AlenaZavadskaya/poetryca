@@ -25,15 +25,17 @@ regForm.addEventListener("submit", (e) => {
     .then((response) => {
       console.log(response);
       if(response.result === 'success'){
-        setUserCookie(response.name);
+        setUserCookie(response.name, response.userId);
       }
     })
     .catch((error) => console.error("Error!", error.message));
 });
 
-function setUserCookie(userName){
+function setUserCookie(userName, userId){
   let cookieName = "name";
   document.cookie = encodeURIComponent(cookieName) + '=' + encodeURIComponent(userName);
+  let cookieID = 'userId';
+  document.cookie = encodeURIComponent(cookieID) + '=' + encodeURIComponent(userId);
   autoriseUser(cookieName);
 }
 
@@ -48,6 +50,7 @@ function autoriseUser(cookieName){
   if(getCookie(cookieName)) {
     let userName = getCookie(cookieName)
     userNameNode.textContent = userName;
+    //pastDataToProfileTemplates();
   }
 }
 
@@ -60,7 +63,7 @@ signInForm.addEventListener("submit", (e) => {
     .then((response) => {
       console.log(response)
       if(response.access === 'allowed') {
-        setUserCookie(response.userName);
+        setUserCookie(response.userName, response.userId);
       }
     })
     .catch((error) => console.error("Error!", error.message));
