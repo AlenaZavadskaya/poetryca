@@ -80,7 +80,7 @@ function getUserData() {
     });
 }
 
-getUserData();
+//getUserData();
 
 
 // при входе проверяем есть ли такой зарегистрированный пользователь

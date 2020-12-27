@@ -27,7 +27,7 @@
     </nav>
     <div class="header__profile">
       <img class="header__profile-icon" src="./images/profile-icon.jpg" alt="иконка профиля" />
-      <p class="header__profile-enter">Admin</p>
+      <p class="header__profile-enter">Войти</p>
     </div>
   </header>
 
@@ -66,8 +66,9 @@
             <legend class="popup__subtitle">
               Добро&nbsp;пожаловать! Войдите,&nbsp;чтобы&nbsp;продолжить
             </legend>
-						<!-- <input name="email" type="email" id="email" class="popup__input popup__input_type_email" placeholder="Email" required> -->
-						<input name="name" id="name" type="text" id="userName" class="popup__input popup__input_type_email" placeholder="Имя" required>
+						<input name="email" type="email" id="email" class="popup__input popup__input_type_email" placeholder="Email" required>
+            <input name ="signIn" type="hidden" value=true>
+            <!--input name="name" id="name" type="text" id="userName" class="popup__input popup__input_type_email" placeholder="Имя" required-->
             <input name="password" type="password" id="password" class="popup__input popup__input_type_password" placeholder="Пароль" required>
             <button type="submit" class="button popup__button popup__button_type_submit">Войти</button>
           </fieldset>
@@ -134,7 +135,7 @@
     </ul>
 	</template>
 	<script src="scripts/data.js"></script>
-	<script src="scripts/getData.js"></script>
+	<!--script src="scripts/getData.js"></script-->
 	<script src="scripts/popup.js"></script>
 	<script src="scripts/index.js"></script>
 </body>
