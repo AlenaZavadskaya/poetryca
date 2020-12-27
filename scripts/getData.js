@@ -5,7 +5,6 @@ function getData() {
   )
     .then((response) => response.json())
     .then((res) => {
-      console.log(res);
       let phrase = res.values;
       return phrase;
     })
@@ -14,9 +13,8 @@ function getData() {
     });
 }
 
-
-// отрисовываем на странице последние данные, сохраненные из инпута
-function pastDataToProfile() {
+// отрисовываем на странице пользователя последние запросы, сохраненные из инпута
+function pastDataToProfileTemplates() {
   getData()
     .then((data) => {
       const lastFive = data.slice(Math.max(data.length - 5, 1));
@@ -33,8 +31,7 @@ function pastDataToProfile() {
     });
 }
 
-pastDataToProfile();
-
+pastDataToProfileTemplates();
 
 //  запрос на получение данных пользователя при входе
 function getUser() {
@@ -43,7 +40,6 @@ function getUser() {
   )
     .then((response) => response.json())
     .then((res) => {
-      console.log(res);
       let user = res.values;
       return user;
     })
@@ -55,7 +51,7 @@ function getUser() {
 // отрисовываем на странице последние данные, сохраненные из инпута
 function putDataToProfile() {
   getUser()
-    .then((data) => {
+		.then((data) => {
       const currentUser = data[data.length - 1];
       document.querySelector(
         ".header__profile-enter"
@@ -71,18 +67,46 @@ putDataToProfile();
 //  запрос на получение данных при регистрации
 function getUserData() {
   return fetch(
-    "https://spreadsheets.google.com/feeds/cells/1OnRWfNHL13x5DjbkNEqoLYW9y0iMg4vZqFz6iizGDms/1/public/full?alt=json"
+    "https://sheets.googleapis.com/v4/spreadsheets/1OnRWfNHL13x5DjbkNEqoLYW9y0iMg4vZqFz6iizGDms/values/B2:F?key=AIzaSyDCpvPFFXvd8w0snHFqUPjo3hs5SNpm4z4"
   )
     .then((response) => response.json())
     .then((res) => {
-      console.log(res);
+      // console.log(res);
+      let user = res.values;
+      return user;
     })
     .catch((err) => {
       console.log(`Ошибка: ${err}`);
     });
 }
 
-// getUserData();
+getUserData();
+
+
+// при входе проверяем есть ли такой зарегистрированный пользователь
+// если нет, то предлагаем зарегистрироваться
+form3.addEventListener("submit", (e) => {
+  e.preventDefault();
+  getUserData()
+		.then((data) => {
+      const usersList = data;
+      const inputEmail = form3.querySelector("#name").value;
+      const inputPassword = form3.querySelector("#password").value;
+      const inputsArray = [inputEmail, inputPassword];
+      const str = usersList.toString().split(",");
+      const comparing = inputsArray.every((ai) => str.includes(ai));
+      if (comparing === true) {
+        document.querySelector(
+          ".header__profile-enter"
+        ).textContent = inputEmail;
+				closePopup(popupSigning);
+        return;
+      } else {
+        switchForm(e);
+      }
+    })
+    .catch((error) => console.error("Error!", error.message));
+});
 
 
 

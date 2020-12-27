@@ -1,71 +1,95 @@
-const singInLink = document.querySelector('.header__profile');
-const popupSingInNode = document.querySelector('.popup_type_singin');
-const popupContainer = popupSingInNode.querySelector('.popup__container');
-const formContainerList = popupSingInNode.querySelectorAll('.popup__form-container');
-const regSwitch = popupSingInNode.querySelector('.popup__switch_type_switch-reg');
-const singInSwitch = popupSingInNode.querySelector('.popup__switch_type_switch-singin');
+const singInLink = document.querySelector(".header__profile");
+const popupSigning = document.querySelector(".popup_type_singin");
+const popupRegistraiting = document.querySelector(
+  ".popup__form_type_registration"
+);
+const popupContainer = popupSigning.querySelector(".popup__container");
+const formContainerList = popupSigning.querySelectorAll(
+  ".popup__form-container"
+);
+const regSwitch = popupSigning.querySelector(".popup__switch_type_switch-reg");
+const singInSwitch = popupSigning.querySelector(
+  ".popup__switch_type_switch-singin"
+);
 
 const regFormNode = document.forms.registrationForm;
-const formFieldsetList = regFormNode.querySelectorAll('.popup__fieldset');
-const nextButton = regFormNode.querySelector('.popup__button_type_next');
+const formFieldsetList = regFormNode.querySelectorAll(".popup__fieldset");
+const nextButton = regFormNode.querySelector(".popup__button_type_next");
 
-function openPopup(evt, popupElement) {
-    evt.preventDefault();
-    popupElement.classList.add('popup_active');
-    slideLeftPopupContainer(popupContainer)
+// открыть попап
+function openPopup(popupElement) {
+  popupElement.classList.add("popup_active");
+  slideLeftPopupContainer(popupContainer);
+  document.addEventListener("keydown", escapeClose);
+}
+
+// закрыть попап
+function closePopup(popupElement) {
+  popupContainer.classList.add("slide");
+  setTimeout(() => {
+    popupContainer.classList.remove("slide");
+    popupContainer.classList.remove("slide_direction_left");
+    popupElement.classList.remove("popup_active");
+  }, 500);
+  document.removeEventListener("keydown", escapeClose);
+}
+
+// закрыть попап - Escape
+function escapeClose(evt) {
+  if (evt.key === "Escape") {
+    popupContainer.classList.add("slide");
+    setTimeout(() => {
+      const openedPopup = document.querySelector(".popup_active");
+      popupContainer.classList.remove("slide");
+      popupContainer.classList.remove("slide_direction_left");
+      openedPopup.classList.remove("popup_active");
+    }, 500);
+  }
+}
+
+// закрыть попап - overlay
+function closeOverlay(event, popupElement) {
+  if (event.target === event.currentTarget) {
+    closePopup(popupElement);
+  }
 }
 
 function slideLeftPopupContainer(popupContainer) {
-    popupContainer.classList.add('slide');
-    popupContainer.classList.add('slide_direction_left');
-    setTimeout(() => {
-        popupContainer.classList.remove('slide');
-    }, 1000);
-    
-}
-
-function popupClose(evt, popupElement) {
-    evt.preventDefault();
-    popupContainer.classList.add('slide');
-    setTimeout(() => {
-        popupContainer.classList.remove('slide');
-        popupContainer.classList.remove('slide_direction_left');
-        popupElement.classList.remove('popup_active'); 
-    }, 500);
-    
+  popupContainer.classList.add("slide");
+  popupContainer.classList.add("slide_direction_left");
+  setTimeout(() => {
+    popupContainer.classList.remove("slide");
+  }, 1000);
 }
 
 function switchForm(evt) {
-    formContainerList.forEach(elem => {
-        elem.classList.toggle('popup__form-container_current')
-    })
+  formContainerList.forEach((elem) => {
+    elem.classList.toggle("popup__form-container_current");
+  });
 }
 
 function switchFieldset(evt) {
-    formFieldsetList.forEach(elem => {
-        elem.classList.toggle('popup__fieldset_current')
-    })
+  formFieldsetList.forEach((elem) => {
+    elem.classList.toggle("popup__fieldset_current");
+  });
 }
 
+singInLink.addEventListener("click", (evt) => {
+  openPopup(popupSigning);
+});
 
-singInLink.addEventListener('click', (evt) => {    
-    openPopup(evt, popupSingInNode)
-})
+regSwitch.addEventListener("click", (evt) => {
+  switchForm(evt);
+});
 
-popupSingInNode.addEventListener('click', (evt) => {
-    if(!evt.target.closest('.popup__container')){
-        popupClose(evt, popupSingInNode);
-    }
-}) 
+singInSwitch.addEventListener("click", (evt) => {
+  switchForm(evt);
+});
 
-regSwitch.addEventListener('click', (evt) => {
-    switchForm(evt);
-})
+nextButton.addEventListener("click", (evt) => {
+  switchFieldset(evt);
+});
 
-singInSwitch.addEventListener('click', (evt) => {
-    switchForm(evt);
-})
+form2.addEventListener("submit", () => closePopup(popupSigning));
 
-nextButton.addEventListener('click', (evt) => {
-    switchFieldset(evt);
-})
+popupSigning.addEventListener("click", () => closeOverlay(event, popupSigning));
