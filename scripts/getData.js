@@ -1,7 +1,9 @@
+const templatePopup = document.querySelector('.popup_type_template');
+templatePopup.addEventListener("click", (event) => closeOverlay(event, templatePopup));
 //  зарос на получение данных ипута из google таблицы в формате json
 function getData() {
   return fetch(
-    "https://sheets.googleapis.com/v4/spreadsheets/18msT1_mxFbYUzReCGgMYNFNBzwOROwPHCD-Irq10cSM/values/A1:B?key=AIzaSyDCpvPFFXvd8w0snHFqUPjo3hs5SNpm4z4"
+    "https://sheets.googleapis.com/v4/spreadsheets/18msT1_mxFbYUzReCGgMYNFNBzwOROwPHCD-Irq10cSM/values/A1:C?key=AIzaSyDCpvPFFXvd8w0snHFqUPjo3hs5SNpm4z4"
   )
     .then((response) => response.json())
     .then((res) => {
@@ -22,7 +24,7 @@ function pastDataToProfileTemplates() {
       let userId = getCookie('userId');
       let userExcerptList = data.reduce((result, elem) => {
         if(elem[0] === userId) {
-          result.push(elem[1]);
+          result.push([elem[1], elem[2]]);
         } 
         return result;
       }, [])
@@ -32,8 +34,16 @@ function pastDataToProfileTemplates() {
         const requestList = document.createElement("li");
         const container = document.querySelector(".profile__templates");
         requestList.classList.add("profile__templates-element");
-        requestList.textContent = element;
+        requestList.textContent = element[0];
         container.append(requestList);
+        requestList.addEventListener('click', () => {
+          openPopup(templatePopup);
+          const popupContainer = templatePopup.querySelector('.popup__container');
+          let parNode = document.createElement('p');
+          parNode.classList.add('popup__paragraph');
+          parNode.textContent = element[1];
+          popupContainer.append(parNode);
+        })
       });
     })
     .catch((err) => {

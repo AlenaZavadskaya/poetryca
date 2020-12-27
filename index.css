@@ -30,6 +30,7 @@
 @import url(blocks/popup/__label/popup__label.css);
 @import url(blocks/popup/__pseudo-item/_type/popup__pseudo-item_type_checkbox.css);
 @import url(blocks/popup/__switch/popup__switch.css);
+@import url(blocks/popup/__paragraph/popup__paragraph.css);
 @import url(blocks/slide/_direction/slide_direction_left.css);
 @import url(blocks/slide/slide.css);
 

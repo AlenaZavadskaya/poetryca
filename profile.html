@@ -81,67 +81,72 @@
 		<section class="author">
 			<button class="content__form-button author" type="submit">СТАТЬ АВТОРОМ</button>
 		</section>
-    <div class="popup popup_type_singin">
-    <div class="popup__container">
-      <div class="popup__form-container popup__form-container_current">
-        <img src="images/popup/popup-singin.png" alt="#" class="popup__image">
-        <h2 class="popup__title">Вход</h2>
-        <form name="signinForm" class="popup__form  popup__form_type_singin">
-          <fieldset class="popup__fieldset popup__fieldset_current">
-            <legend class="popup__subtitle">
-              Добро&nbsp;пожаловать! Войдите,&nbsp;чтобы&nbsp;продолжить
-            </legend>
-						<input name="email" type="email" id="email" class="popup__input popup__input_type_email" placeholder="Email" required>
-            <input name ="signIn" type="hidden" value=true>
-            <!--input name="name" id="name" type="text" id="userName" class="popup__input popup__input_type_email" placeholder="Имя" required-->
-            <input name="password" type="password" id="password" class="popup__input popup__input_type_password" placeholder="Пароль" required>
-            <button type="submit" class="button popup__button popup__button_type_submit">Войти</button>
-          </fieldset>
-        </form>
-        <p class="popup__text">
-          Нет аккаунта?  
-          <a href="#" class="popup__switch popup__switch_type_switch-reg">Зарегистрироваться</a>
-        </p>
-      </div>
-      <div class="popup__form-container">
-        <img src="images/popup/popup-reg.png" alt="#" class="popup__image">
-        <h2 class="popup__title">Регистрация</h2>
-        <form name="registrationForm" class="popup__form popup__form_type_registration">
-          <fieldset class="popup__fieldset popup__fieldset_current">
-            <p class="popup__subtitle">
-              Добро пожаловать! Давайте&nbsp;знакомиться,&nbsp;сначала&nbsp;создайте&nbsp;аккаунт
-            </p>
-            <input name="name" type="name" class="popup__input popup__input_type_text" placeholder="Имя">
-            <input name="tel" type="tel" class="popup__input popup__input_type_tel" placeholder="Телефон">
-            <input name="email" type="email" class="popup__input popup__input_type_email" placeholder="Email">
-            <button type="button" class="button popup__button popup__button_type_next">Далее</button>
-          </fieldset> 
-          <fieldset class="popup__fieldset">
-            <p class="popup__subtitle">
-              Осталось совсем чуть-чуть! Придумайте&nbsp;пароль
-            </p>
-            <input name="password" type="password" class="popup__input popup__input_type_password" placeholder="Пароль" required>
-            <input name="password1" type="password" class="popup__input popup__input_type_password-repeat" placeholder="Повторите пароль" required>
-            <label for="input-policy" class="popup__label">
-              <input id="input-policy" type="checkbox" class="popup__input popup__input_type_policy" required>
-              <span class="popup__pseudo-item_type_checkbox"></span>
-              Я согласен(а) с условиями <a href="#" class="popup__link popup__switch">обработки персональных данных </a> 
-            </label>
-              <button type="submit" class="button popup__button popup__button_type_submit">Зарегистрироваться</button>
-          </fieldset> 
-        </form>
-        <p class="popup__text">
-          Уже зарегистрированы?  
-          <a href="#" class="popup__switch popup__switch_type_switch-singin">Войдите</a>
-        </p>
-      </div>
-    </div>
-  </div>
+    
     <footer class="footer">
       <p class="footer__logo">POETRYCA</p>
       <p class="footer__copyright">&copy; All rights reserved. Poetryca 2025</p>
     </footer>
-    
+    <div class="popup popup_type_singin">
+      <div class="popup__container">
+        <div class="popup__form-container popup__form-container_current">
+          <img src="images/popup/popup-singin.png" alt="#" class="popup__image">
+          <h2 class="popup__title">Вход</h2>
+          <form name="signinForm" class="popup__form  popup__form_type_singin">
+            <fieldset class="popup__fieldset popup__fieldset_current">
+              <legend class="popup__subtitle">
+                Добро&nbsp;пожаловать! Войдите,&nbsp;чтобы&nbsp;продолжить
+              </legend>
+              <input name="email" type="email" id="email" class="popup__input popup__input_type_email" placeholder="Email" required>
+              <input name ="signIn" type="hidden" value=true>
+              <!--input name="name" id="name" type="text" id="userName" class="popup__input popup__input_type_email" placeholder="Имя" required-->
+              <input name="password" type="password" id="password" class="popup__input popup__input_type_password" placeholder="Пароль" required>
+              <button type="submit" class="button popup__button popup__button_type_submit">Войти</button>
+            </fieldset>
+          </form>
+          <p class="popup__text">
+            Нет аккаунта?  
+            <a href="#" class="popup__switch popup__switch_type_switch-reg">Зарегистрироваться</a>
+          </p>
+        </div>
+        <div class="popup__form-container">
+          <img src="images/popup/popup-reg.png" alt="#" class="popup__image">
+          <h2 class="popup__title">Регистрация</h2>
+          <form name="registrationForm" class="popup__form popup__form_type_registration">
+            <fieldset class="popup__fieldset popup__fieldset_current">
+              <p class="popup__subtitle">
+                Добро пожаловать! Давайте&nbsp;знакомиться,&nbsp;сначала&nbsp;создайте&nbsp;аккаунт
+              </p>
+              <input name="name" type="name" class="popup__input popup__input_type_text" placeholder="Имя">
+              <input name="tel" type="tel" class="popup__input popup__input_type_tel" placeholder="Телефон">
+              <input name="email" type="email" class="popup__input popup__input_type_email" placeholder="Email">
+              <button type="button" class="button popup__button popup__button_type_next">Далее</button>
+            </fieldset> 
+            <fieldset class="popup__fieldset">
+              <p class="popup__subtitle">
+                Осталось совсем чуть-чуть! Придумайте&nbsp;пароль
+              </p>
+              <input name="password" type="password" class="popup__input popup__input_type_password" placeholder="Пароль" required>
+              <input name="password1" type="password" class="popup__input popup__input_type_password-repeat" placeholder="Повторите пароль" required>
+              <label for="input-policy" class="popup__label">
+                <input id="input-policy" type="checkbox" class="popup__input popup__input_type_policy" required>
+                <span class="popup__pseudo-item_type_checkbox"></span>
+                Я согласен(а) с условиями <a href="#" class="popup__link popup__switch">обработки персональных данных </a> 
+              </label>
+                <button type="submit" class="button popup__button popup__button_type_submit">Зарегистрироваться</button>
+            </fieldset> 
+          </form>
+          <p class="popup__text">
+            Уже зарегистрированы?  
+            <a href="#" class="popup__switch popup__switch_type_switch-singin">Войдите</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="popup popup_type_template">
+      <div class="popup__container">
+        
+      </div>
+    </div>
 		<!--script- src="./scripts/index.js"></!script-->
     <script src="./scripts/reg.js"></script>
 		<script src="./scripts/popup.js"></script>
